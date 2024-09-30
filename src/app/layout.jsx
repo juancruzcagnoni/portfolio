@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata = {
-  title: "Portfolio",
+  title: "Juan Cruz Cagnoni — Frontend Developer & UX/UI Designer",
   description: "Portfolio",
 };
 
