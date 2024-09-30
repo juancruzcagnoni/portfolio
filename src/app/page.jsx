@@ -1,13 +1,11 @@
-import React from "react";
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
-function IndexPage() {
+export default function Home() {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <h1 className="text-base font-medium text-center">
-        Portfolio coming soon 🔜
-      </h1>
+    <div className="bg-primary">
+      <Hero />
+      <Navbar />
     </div>
   );
 }
-
-export default IndexPage;
