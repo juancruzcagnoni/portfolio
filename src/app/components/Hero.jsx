@@ -33,7 +33,7 @@ const Hero = () => {
 
         <div className="mb-14">
           <h1 className="text-3xl md:text-4xl font-serif mb-4">
-            Hey, I'm Juan Cruz. <br />
+            Hey, Im Juan Cruz. <br />
             <span className="text-accent">
               Frontend Developer & UX/UI Designer.
             </span>
