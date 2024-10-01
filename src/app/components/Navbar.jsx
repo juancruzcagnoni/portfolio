@@ -9,21 +9,21 @@ const Navbar = () => {
       <ul className="flex items-center justify-between space-x-6 text-white font-serif text-lg">
         <li className="pl-3">
           <Link href="/about">
-            <span className="hover:text-gray-300 transition duration-300">
+            <span className="hover:text-gray-300 transition duration-300 text-lg">
               About
             </span>
           </Link>
         </li>
         <li>
           <Link href="/work">
-            <span className="hover:text-gray-300 transition duration-300">
+            <span className="hover:text-gray-300 transition duration-300 text-lg">
               Work
             </span>
           </Link>
         </li>
         <li className="bg-primary px-4 py-2 rounded-full">
           <Link href="/contact">
-            <span className="hover:text-gray-300 transition duration-300">
+            <span className="hover:text-gray-300 transition duration-300 text-lg">
               Contact
             </span>
           </Link>
