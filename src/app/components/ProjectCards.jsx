@@ -1,56 +1,53 @@
-"use client"; // Asegúrate de que el componente se renderice en el cliente
+"use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { supabase } from "../lib/supabaseClient";
 
 const ProjectCards = () => {
+  const [projects, setProjects] = useState([]);
   const [isHovered, setIsHovered] = useState(false);
 
+  const fetchProjects = async () => {
+    const { data, error } = await supabase.from("projects").select("*");
+    if (error) {
+      console.error("Error fetching projects:", error);
+    } else {
+      setProjects(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
   const getRandomRotation = () => {
-    const min = -10;
-    const max = 10;
+    const min = -6;
+    const max = 6;
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  const projects = [
-    {
-      id: 1,
-      title: "Project 1",
-      description: "A cool project about design.",
-      image: "/project1.jpg",
-    },
-    {
-      id: 2,
-      title: "Project 2",
-      description: "An innovative frontend project.",
-      image: "/project2.jpg",
-    },
-    {
-      id: 3,
-      title: "Project 3",
-      description: "A UX/UI focused project.",
-      image: "/project3.jpg",
-    },
-    {
-      id: 4,
-      title: "Project 4",
-      description: "A high-performing app.",
-      image: "/project4.jpg",
-    },
-  ];
-
   return (
-    <section 
-      className="py-16 transition-all duration-500 cursor-pointer" 
-      onMouseEnter={() => setIsHovered(true)} 
+    <section
+      className="py-16 transition-all duration-500 cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="container mx-auto relative flex justify-center items-center space-x-[-10px] transition-all duration-500"> 
+      <div className="container mx-auto relative flex justify-center items-center transition-all duration-500">
         {projects.map((project) => (
-          <div className="flex flex-col items-center" key={project.id}>
+          <div
+            className="flex flex-col items-center"
+            key={project.id}
+            style={{
+              margin: isHovered ? '0 10px' : '0px', // Ajusta el margen según el estado
+              transition: 'margin 0.5s ease', // Transición suave para el margen
+            }}
+          >
             <div
               className="relative w-64 h-64 bg-white rounded-lg overflow-hidden transform transition-transform duration-500"
               style={{
-                transform: isHovered ? 'rotate(0deg)' : `rotate(${getRandomRotation()}deg)`,
+                transform: isHovered
+                  ? "rotate(0deg)"
+                  : `rotate(${getRandomRotation()}deg)`,
               }}
             >
               <img

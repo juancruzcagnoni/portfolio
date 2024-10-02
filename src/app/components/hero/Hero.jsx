@@ -16,10 +16,10 @@ const Hero = () => {
               className="rounded-lg mr-3"
             />
             <div className="flex flex-col">
-              <span className="text-secondary text-base">Juan Cruz Cagnoni</span>
-              <span className="text-accent text-sm">
-                Developer & Designer
+              <span className="text-secondary text-base">
+                Juan Cruz Cagnoni
               </span>
+              <span className="text-accent text-sm">Developer & Designer</span>
             </div>
           </div>
 
@@ -27,7 +27,9 @@ const Hero = () => {
             <div className="mr-2">
               <StatusIndicator />
             </div>
-            <span className="text-secondary font-serif text-lg">Open to work</span>
+            <span className="text-secondary font-serif text-lg">
+              Open to work
+            </span>
           </div>
         </div>
 
@@ -45,7 +47,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between pb-10 border-b border-accent">
           <a
             href="mailto:juancagnoni@gmail.com"
             className="underline font-serif text-accent text-lg mb-2 md:mb-0"
