@@ -27,8 +27,8 @@ const ProjectCards = () => {
   };
 
   return (
-    <section className="transition-all duration-500 w-11/12 md:w-4/5 m-auto py-12 md:py-24">
-      <div className="container mx-auto grid grid-cols-2 gap-4 md:flex md:flex-wrap md:justify-center md:items-center">
+    <section className="transition-all duration-500 w-11/12 md:w-7/12 m-auto py-12 md:py-24">
+      <div className="container mx-auto grid grid-cols-2 gap-4 md:flex md:flex-wrap md:justify-between md:items-center">
         {projects.map((project) => (
           <div
             className="flex flex-col items-center mb-4 md:mb-0"

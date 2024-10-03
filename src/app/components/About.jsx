@@ -3,11 +3,12 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="py-16 w-11/12 md:w-8/12 m-auto">
+    <div className="py-16 w-11/12 md:w-7/12 m-auto">
       <h2 className="font-serif text-secondary text-center text-2xl sm:text-3xl">
         What&apos;s about me?
       </h2>
       <div className="flex flex-col lg:flex-row justify-between mt-16 lg:mt-24 w-full">
+        {/* Imagen con ancho completo en pantallas pequeñas, 4/12 en pantallas grandes */}
         <div className="bg-secondary p-5 flex flex-col items-center w-full lg:w-4/12 mb-8 lg:mb-0">
           <Image
             src="/icon.jpg"
