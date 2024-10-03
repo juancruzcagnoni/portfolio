@@ -27,27 +27,28 @@ const ProjectCards = () => {
   };
 
   return (
-    <section
-      className="py-16 transition-all duration-500 cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="container mx-auto relative flex justify-center items-center transition-all duration-500">
+    <section className="transition-all duration-500 w-11/12 md:w-4/5 m-auto py-12 md:py-24">
+      <div className="container mx-auto grid grid-cols-2 gap-4 md:flex md:flex-wrap md:justify-center md:items-center">
         {projects.map((project) => (
           <div
-            className="flex flex-col items-center"
+            className="flex flex-col items-center mb-4 md:mb-0"
             key={project.id}
-            style={{
-              margin: isHovered ? '0 10px' : '0px', // Ajusta el margen según el estado
-              transition: 'margin 0.5s ease', // Transición suave para el margen
-            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
             <div
-              className="relative w-64 h-64 bg-white rounded-lg overflow-hidden transform transition-transform duration-500"
+              className={`relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white rounded-lg overflow-hidden transition-transform duration-500`}
               style={{
-                transform: isHovered
-                  ? "rotate(0deg)"
-                  : `rotate(${getRandomRotation()}deg)`,
+                // Para pantallas pequeñas, sin rotación
+                transform: `rotate(0deg)`,
+                // En pantallas medianas y grandes, aplicar rotación aleatoria y hover
+                ...(typeof window !== "undefined" && window.innerWidth >= 768
+                  ? {
+                      transform: isHovered
+                        ? "rotate(0deg)" 
+                        : `rotate(${getRandomRotation()}deg)`, 
+                    }
+                  : {}),
               }}
             >
               <img
@@ -56,8 +57,8 @@ const ProjectCards = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="mt-4">
-              <h3 className="font-serif text-secondary text-lg">
+            <div className="mt-2 md:mt-4">
+              <h3 className="font-serif text-secondary text-base md:text-lg text-center">
                 {project.title}
               </h3>
             </div>
