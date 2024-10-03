@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="py-16 w-11/12 md:w-2/5 m-auto">
       <h2 className="font-serif text-secondary text-center text-2xl sm:text-3xl">
-        What's about me?
+        What&apos;s about me?
       </h2>
       <div className="flex flex-col lg:flex-row justify-between mt-16 lg:mt-24">
         <div className="bg-secondary p-4 pb-6 flex flex-col items-center">
