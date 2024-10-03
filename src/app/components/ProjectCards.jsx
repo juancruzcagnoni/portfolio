@@ -39,9 +39,7 @@ const ProjectCards = () => {
             <div
               className={`relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white rounded-lg overflow-hidden transition-transform duration-500`}
               style={{
-                // Para pantallas pequeñas, sin rotación
                 transform: `rotate(0deg)`,
-                // En pantallas medianas y grandes, aplicar rotación aleatoria y hover
                 ...(typeof window !== "undefined" && window.innerWidth >= 768
                   ? {
                       transform: isHovered
