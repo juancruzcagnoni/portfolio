@@ -11,7 +11,7 @@ const About = () => {
         <div className="bg-secondary p-4 pb-6 flex flex-col items-center">
           <Image src="/icon.jpg" alt="Juan Cruz" width={300} height={300} />
           <span className="text-lg sm:text-xl font-serif text-primary mt-6">
-            That's me!
+            That&apos;s me!
           </span>
         </div>
         <div className="flex flex-col justify-between items-end lg:w-2/4 lg:ml-12 mt-5 md:mt-0">
