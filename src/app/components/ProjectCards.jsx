@@ -37,7 +37,7 @@ const ProjectCards = () => {
             onMouseLeave={() => setIsHovered(false)}
           >
             <div
-              className={`relative w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-white rounded-lg overflow-hidden transition-transform duration-500`}
+              className={`relative w-40 h-40 sm:w-48 sm:h-48 md:w-40 md:h-40 bg-white rounded-lg overflow-hidden transition-transform duration-500`}
               style={{
                 transform: `rotate(0deg)`,
                 ...(typeof window !== "undefined" && window.innerWidth >= 768

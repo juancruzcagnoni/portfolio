@@ -31,7 +31,7 @@ const Projects = () => {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="bg-primary text-white rounded-lg shadow-lg md:p-5"
+            className="bg-primary text-white rounded-lg shadow-lg"
           >
             {project.image && (
               <Image
@@ -43,10 +43,10 @@ const Projects = () => {
               />
             )}
             <div className="flex justify-between items-end">
-              <h3 className="font-serif text-2xl">{project.title}</h3>
+              <h3 className="font-serif text-xl">{project.title}</h3>
               <a
                 href={project.link}
-                className="font-serif text-lg text-accent underline"
+                className="font-serif text-base text-accent underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
