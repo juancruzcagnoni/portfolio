@@ -69,7 +69,7 @@ const Hero = () => {
             className="text-secondary text-3xl md:text-4xl font-serif mb-4"
             variants={itemVariants}
           >
-            Hey, I&apos;Juan Cruz. <br />
+            Hey, I&apos;m Juan Cruz. <br />
             <span className="text-accent">
               Frontend Developer & UX/UI Designer.
             </span>
