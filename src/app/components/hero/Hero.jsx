@@ -1,10 +1,9 @@
 import React from "react";
 import StatusIndicator from "./StatusIndicator";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Importar Framer Motion
+import { motion } from "framer-motion"; 
 
 const Hero = () => {
-  // Variantes para las animaciones
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -56,7 +55,7 @@ const Hero = () => {
               <StatusIndicator />
             </div>
             <motion.span
-              className="text-secondary font-serif text-lg"
+              className="text-secondary   text-sm"
               variants={itemVariants}
             >
               Open to work
@@ -66,7 +65,7 @@ const Hero = () => {
 
         <motion.div className="mb-14" variants={itemVariants}>
           <motion.h1
-            className="text-secondary text-3xl md:text-4xl font-serif mb-4"
+            className="text-secondary font-bold tracking-tight text-2xl md:text-3xl mb-4"
             variants={itemVariants}
           >
             Hey, I&apos;m Juan Cruz. <br />
@@ -90,7 +89,7 @@ const Hero = () => {
         >
           <motion.a
             href="mailto:juancagnoni@gmail.com"
-            className="underline font-serif text-accent text-lg mb-2 md:mb-0"
+            className="underline   text-accent text-base mb-2 md:mb-0"
             variants={itemVariants}
           >
             Copy Email
@@ -99,7 +98,7 @@ const Hero = () => {
             href="https://github.com/juancruzcagnoni/"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline font-serif text-accent text-lg mb-2 md:mb-0"
+            className="underline   text-accent text-base mb-2 md:mb-0"
             variants={itemVariants}
           >
             Github
@@ -108,7 +107,7 @@ const Hero = () => {
             href="https://dribbble.com/juancagnoni"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline font-serif text-accent text-lg mb-2 md:mb-0"
+            className="underline   text-accent text-base mb-2 md:mb-0"
             variants={itemVariants}
           >
             Dribbble
@@ -117,7 +116,7 @@ const Hero = () => {
             href="https://www.linkedin.com/in/juancruzcagnoni/"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline font-serif text-accent text-lg mb-2 md:mb-0"
+            className="underline   text-accent text-base mb-2 md:mb-0"
             variants={itemVariants}
           >
             LinkedIn

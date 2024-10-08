@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="flex flex-col md:flex-row justify-between px-4 md:px-24 py-8 md:py-12">
       <div className="flex flex-col md:flex-row mb-6 md:mb-0">
         <div className="flex flex-col mb-4 md:mb-0 md:mr-5">
-          <span className="text-accent font-serif text-base">Work with me</span>
+          <span className="text-accent   text-base">Work with me</span>
           <a
             href="mailto:juancagnoni@gmail.com"
             className="text-secondary text-sm"
@@ -15,7 +15,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="flex flex-col">
-          <span className="text-accent font-serif text-base">Follow me</span>
+          <span className="text-accent   text-base">Follow me</span>
           <div className="flex flex-wrap">
             <a
               href="https://dribbble.com/juancagnoni"

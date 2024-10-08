@@ -1,8 +1,7 @@
-"use client";
-
 import React, { useEffect, useState, useRef } from "react";
 import { supabase } from "../lib/supabaseClient";
 import Image from "next/image";
+import Link from "next/link"; 
 import { motion } from "framer-motion";
 
 const Projects = () => {
@@ -18,14 +17,13 @@ const Projects = () => {
         console.error("Error fetching projects:", error);
       } else {
         setProjects(data);
-        setVisible(Array(data.length).fill(false)); // Inicializar el estado de visibilidad
+        setVisible(Array(data.length).fill(false)); 
       }
     };
 
     fetchProjects();
   }, []);
 
-  // Manejar la intersección
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,14 +32,14 @@ const Projects = () => {
             const index = entry.target.getAttribute("data-index");
             setVisible((prevVisible) => {
               const newVisible = [...prevVisible];
-              newVisible[index] = true; // Marcar como visible
+              newVisible[index] = true;
               return newVisible;
             });
-            observer.unobserve(entry.target); // Dejar de observar una vez que está visible
+            observer.unobserve(entry.target); 
           }
         });
       },
-      { threshold: 0.1 } // Cambiar según lo que necesites
+      { threshold: 0.1 }
     );
 
     const elements = sectionRef.current.querySelectorAll(".project-card");
@@ -52,7 +50,6 @@ const Projects = () => {
     };
   }, [projects]);
 
-  // Variantes para las animaciones
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -74,7 +71,7 @@ const Projects = () => {
   return (
     <div ref={sectionRef} className="py-16 w-11/12 md:w-7/12 m-auto">
       <motion.h2
-        className="font-serif text-secondary text-center text-2xl sm:text-3xl"
+        className="font-semibold tracking-tight text-secondary text-center text-2xl sm:text-3xl"
         initial="hidden"
         animate="visible"
         variants={titleVariants}
@@ -87,7 +84,7 @@ const Projects = () => {
           <motion.div
             key={project.id}
             className="project-card bg-primary text-white rounded-lg"
-            data-index={index} 
+            data-index={index}
             initial="hidden"
             animate={visible[index] ? "visible" : "hidden"}
             variants={itemVariants}
@@ -102,15 +99,13 @@ const Projects = () => {
               />
             )}
             <div className="flex justify-between items-end">
-              <h3 className="font-serif text-xl">{project.title}</h3>
-              <a
-                href={project.link}
-                className="font-serif text-base text-accent underline"
-                target="_blank"
-                rel="noopener noreferrer"
+              <h3 className="  text-xl">{project.title}</h3>
+              <Link
+                className="  text-base text-accent underline"
+                href={`/projects/${project.id}`} // Enlace dinámico al detalle del proyecto
               >
                 View details
-              </a>
+              </Link>
             </div>
           </motion.div>
         ))}

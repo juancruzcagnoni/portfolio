@@ -56,7 +56,7 @@ const ProjectCards = () => {
               />
             </div>
             <div className="mt-2 md:mt-4">
-              <h3 className="font-serif text-secondary text-base md:text-lg text-center">
+              <h3 className="  text-secondary text-base md:text-lg text-center">
                 {project.title}
               </h3>
             </div>

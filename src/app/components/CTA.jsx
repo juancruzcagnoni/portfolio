@@ -3,7 +3,7 @@ import React from "react";
 const CTA = () => {
   return (
     <div className="py-28 flex flex-col items-center">
-      <h2 className="font-serif text-secondary text-center text-2xl sm:text-3xl mb-12">
+      <h2 className="font-semibold tracking-tight text-secondary text-center text-2xl sm:text-3xl mb-12">
         Do you want to work with me?
       </h2>
       <a

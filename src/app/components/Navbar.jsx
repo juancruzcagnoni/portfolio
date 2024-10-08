@@ -31,11 +31,11 @@ const Navbar = ({ scrollToSection }) => {
           animate="visible"
           variants={navVariants}
         >
-          <ul className="flex items-center justify-between space-x-6 text-white font-serif text-lg">
+          <ul className="flex items-center justify-between space-x-6 text-white   text-lg">
             <li className="pl-3">
               <button
                 onClick={() => scrollToSection("about")}
-                className="hover:text-gray-300 transition duration-300 text-lg"
+                className="hover:text-gray-300 transition duration-300 text-base"
               >
                 About
               </button>
@@ -43,13 +43,13 @@ const Navbar = ({ scrollToSection }) => {
             <li>
               <button
                 onClick={() => scrollToSection("work")}
-                className="hover:text-gray-300 transition duration-300 text-lg"
+                className="hover:text-gray-300 transition duration-300 text-base"
               >
                 Work
               </button>
             </li>
             <li className="bg-primary px-4 py-2 rounded-full">
-              <a href="mailto:juancagnoni@gmail.com" className="hover:text-gray-300 transition duration-300 text-lg">
+              <a href="mailto:juancagnoni@gmail.com" className="hover:text-gray-300 transition duration-300 text-base">
                 Contact
               </a>
             </li>

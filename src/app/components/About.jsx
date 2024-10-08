@@ -46,7 +46,7 @@ const About = () => {
   return (
     <div className="py-16 w-11/12 md:w-7/12 m-auto">
       <motion.h2
-        className="font-serif text-secondary text-center text-2xl sm:text-3xl"
+        className="font-semibold tracking-tight text-secondary text-center text-2xl sm:text-3xl"
         initial="hidden"
         animate="visible"
         variants={{
@@ -72,7 +72,7 @@ const About = () => {
             height={300}
             className="object-cover w-full h-auto"
           />
-          <span className="text-lg sm:text-xl font-serif text-primary mt-6">
+          <span className="text-lg sm:text-xl   text-primary mt-6">
             That&apos;s me!
           </span>
         </div>
@@ -90,7 +90,7 @@ const About = () => {
             line slice. Opacity inspect variant export invite team. Polygon
             device font fill line ipsum.
           </p>
-          <span className="font-serif text-lg text-accent mt-4 lg:mt-6">
+          <span className="  text-lg text-accent mt-4 lg:mt-6">
             Juan Cruz Cagnoni.
           </span>
         </div>
