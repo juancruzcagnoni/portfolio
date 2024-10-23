@@ -16,7 +16,7 @@ export default function Hero() {
         <p className="text-base text-accent mb-4">
           Based in Buenos Aires, Argentina, I&apos;m always up for 
           a good coffee and an even better conversation about tech, design, or anything 
-          in between. Let's connect and explore how we can create something amazing together!
+          in between. Let&apos;s connect and explore how we can create something amazing together!
         </p>
         <p className="text-base text-accent mb-4">
           Curious about my work? Check out my digital footprint on{" "}
@@ -38,13 +38,13 @@ export default function Hero() {
           <a className="text-secondary underline" href="">
             right here
           </a>
-          . It's a journey you won't want to miss!
+          . It&apos;s a journey you won&apos;t want to miss!
         </p>
         <a
           href="#contact"
           className="underline rounded-full text-base hover:text-accent transition-colors duration-300"
         >
-          Ready to collaborate? Let's chat! →
+          Ready to collaborate? Let&apos;s chat! →
         </a>
       </div>
     </section>
