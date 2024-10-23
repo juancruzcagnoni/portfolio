@@ -5,16 +5,16 @@ export default function Hero() {
     <section className="text-white flex justify-center px-4 sm:px-6 lg:px-8 md:py-16 py-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-xl sm:text-2xl lg:text-4xl font-medium tracking-tight mb-8">
-          Hey, I'm Juan Cruz Cagnoni,{" "}
+          Hey, I&apos;m Juan Cruz Cagnoni,{" "}
           <span className="text-accent">where code meets design</span>
         </h1>
         <p className="text-base text-accent mb-4">
           Blending the precision of a developer with the creativity of a designer, 
           I craft digital solutions that are both functional and beautiful. 
-          Currently, I'm working at DL Consultores as a Fiori/UI5 developer.
+          Currently, I&apos;m working at DL Consultores as a Fiori/UI5 developer.
         </p>
         <p className="text-base text-accent mb-4">
-          Based in Buenos Aires, Argentina, I'm always up for 
+          Based in Buenos Aires, Argentina, I&apos;m always up for 
           a good coffee and an even better conversation about tech, design, or anything 
           in between. Let's connect and explore how we can create something amazing together!
         </p>

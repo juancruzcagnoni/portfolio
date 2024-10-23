@@ -34,7 +34,7 @@ export default function Projects() {
         </h2>
         <p className="text-base text-accent mb-8">
           Each project is a story of challenges overcome and creative solutions realized.
-          Explore how I've transformed ideas into impactful digital experiences.
+          Explore how I&apos;ve transformed ideas into impactful digital experiences.
         </p>
         <div className="flex justify-center space-x-4 mb-8 mt-24">
           <button 
@@ -97,7 +97,7 @@ export default function Projects() {
           Interested in collaborating on a similar project? 
           <a href="#contact" className="text-secondary underline ml-1 hover:text-accent transition-colors duration-300">
             Get in touch
-          </a> and let's bring your digital vision to life.
+          </a> and let&apos;s bring your digital vision to life.
         </p>
       </div>
     </section>
