@@ -78,17 +78,19 @@ export default function Projects() {
               </div>
               <div className="pt-4 flex flex-col justify-between flex-grow">
                 <div>
-                  <h3 className="text-md font-medium mb-2">{project.title}</h3>
+                  <h3 className="text-md font-medium mb-1">{project.title}</h3>
                   <p className="text-accent mb-4">{project.description}</p>
                 </div>
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-secondary underline hover:text-accent transition-colors duration-300 self-start mt-2"
-                >
-                  View project →
-                </a>
+                <div className="flex justify-end">
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-secondary underline hover:text-accent transition-colors duration-300 mt-2"
+                  >
+                    View project →
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
