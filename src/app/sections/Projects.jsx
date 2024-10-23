@@ -95,7 +95,7 @@ export default function Projects() {
         </div>
         <p className="text-base text-accent mt-12">
           Interested in collaborating on a similar project? 
-          <a href="#contact" className="text-secondary underline ml-1 hover:text-accent transition-colors duration-300">
+          <a href="mailto:juancagnoni@gmail.com" className="text-secondary underline ml-1 hover:text-accent transition-colors duration-300">
             Get in touch
           </a> and let&apos;s bring your digital vision to life.
         </p>

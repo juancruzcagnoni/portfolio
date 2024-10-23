@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="text-white flex justify-center px-4 sm:px-6 lg:px-8 md:py-16 py-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-xl sm:text-2xl lg:text-4xl font-medium tracking-tight mb-8">
+        <h1 className="text-2xl sm:text-2xl lg:text-4xl font-medium tracking-tight mb-8">
           Hey, I&apos;m Juan Cruz Cagnoni,{" "}
           <span className="text-accent">where code meets design</span>
         </h1>
@@ -20,15 +20,15 @@ export default function Hero() {
         </p>
         <p className="text-base text-accent mb-4">
           Curious about my work? Check out my digital footprint on{" "}
-          <a className="text-secondary underline" href="">
+          <a className="text-secondary underline" href="https://www.linkedin.com/in/juancruzcagnoni/" target="_blank">
             LinkedIn
           </a>
           ,{" "}
-          <a className="text-secondary underline" href="">
+          <a className="text-secondary underline" href="https://dribbble.com/juancagnoni" target="_blank">
             Dribbble
           </a>{" "}
           and{" "}
-          <a className="text-secondary underline" href="">
+          <a className="text-secondary underline" href="https://github.com/juancruzcagnoni" target="_blank">
             Github
           </a>
           . Each platform showcases a different facet of my professional journey.
@@ -41,7 +41,7 @@ export default function Hero() {
           . It&apos;s a journey you won&apos;t want to miss!
         </p>
         <a
-          href="#contact"
+          href="mailto:juancagnoni@gmail.com"
           className="underline rounded-full text-base hover:text-accent transition-colors duration-300"
         >
           Ready to collaborate? Let&apos;s chat! →
