@@ -26,16 +26,16 @@ const Navbar = ({ scrollToSection }) => {
     <>
       {showNavbar && (
         <motion.nav
-          className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-nav backdrop-blur-md rounded-full shadow-lg p-3 w-max z-50"
+          className="fixed bottom-10 left-1/2 transform -translate-x-1/2 rounded-full py-3 px-6 w-max z-50 bg-gray"
           initial="hidden"
           animate="visible"
           variants={navVariants}
         >
-          <ul className="flex items-center justify-between space-x-6 text-white   text-lg">
-            <li className="pl-3">
+          <ul className="flex items-center justify-between space-x-6 text-secondary text-lg">
+            <li>
               <button
                 onClick={() => scrollToSection("about")}
-                className="hover:text-gray-300 transition duration-300 text-base"
+                className="text-base"
               >
                 About
               </button>
@@ -43,13 +43,13 @@ const Navbar = ({ scrollToSection }) => {
             <li>
               <button
                 onClick={() => scrollToSection("work")}
-                className="hover:text-gray-300 transition duration-300 text-base"
+                className="text-base"
               >
                 Work
               </button>
             </li>
-            <li className="bg-primary px-4 py-2 rounded-full">
-              <a href="mailto:juancagnoni@gmail.com" className="hover:text-gray-300 transition duration-300 text-base">
+            <li>
+              <a href="mailto:juancagnoni@gmail.com" className="text-base">
                 Contact
               </a>
             </li>

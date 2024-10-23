@@ -10,7 +10,7 @@ module.exports = {
         primary: '#0F0F0F',
         secondary: '#F6F6F6',
         accent: '#BFBFBF',
-        nav: '#262626',
+        gray: '#262626',
       },
       fontFamily: {
         serif: ['Instrument Serif', 'serif'], 
