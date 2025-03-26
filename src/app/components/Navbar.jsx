@@ -1,63 +1,70 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Sun, Moon } from "lucide-react"
+import XLogo from "./icons/XLogo"
 
-const Navbar = ({ scrollToSection }) => {
-  const [showNavbar, setShowNavbar] = useState(false);
+export default function Navbar() {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowNavbar(true);
-    }, 1300);
+    setMounted(true)
+    const savedTheme = localStorage.getItem("theme")
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
 
-    return () => clearTimeout(timer);
-  }, []);
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      setIsDarkMode(true)
+      document.documentElement.classList.add("dark")
+    }
+  }, [])
 
-  const navVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-  };
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark")
+      localStorage.setItem("theme", "light")
+    } else {
+      document.documentElement.classList.add("dark")
+      localStorage.setItem("theme", "dark")
+    }
+    setIsDarkMode(!isDarkMode)
+  }
+
+  if (!mounted) {
+    return null
+  }
 
   return (
-    <>
-      {showNavbar && (
-        <motion.nav
-          className="fixed bottom-10 left-1/2 transform -translate-x-1/2 rounded-full py-3 px-6 w-max z-50 bg-gray"
-          initial="hidden"
-          animate="visible"
-          variants={navVariants}
-        >
-          <ul className="flex items-center justify-between space-x-6 text-secondary text-lg">
-            <li>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-base"
-              >
-                About
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("work")}
-                className="text-base"
-              >
-                Work
-              </button>
-            </li>
-            <li>
-              <a href="mailto:juancagnoni@gmail.com" className="text-base">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </motion.nav>
-      )}
-    </>
-  );
-};
+    <nav className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] flex items-center justify-between py-4">
+      <div className="flex">
+        <Link href="/" className="tracking-tight text-base md:text-lg font-bold text-primary dark:text-secondary transition-colors duration-300">
+          Juan Cruz Cagnoni
+        </Link>
+      </div>
 
-export default Navbar;
+      <div className="flex items-center justify-between gap-2 md:gap-4">
+        <Link
+          href="/reading"
+          className="text-sm md:text-base text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
+        >
+          Reading
+        </Link>
+        <Link
+          href="https://twitter.com/juanccagnoni"
+          className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
+        >
+          <XLogo className="h-4 w-4" />
+        </Link>
+        <button
+          onClick={toggleTheme}
+          className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
+          aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          {isDarkMode ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+        </button>
+      </div>
+    </nav>
+  )
+}
+
