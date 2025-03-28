@@ -10,12 +10,24 @@ export default function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('/api/projects');
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 segundos timeout
+
+        const response = await fetch('/api/projects', {
+          signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
+
         const data = await response.json();
-        console.log('Projects data:', data); // Para debugging
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
         setProjects(data);
       } catch (error) {
         console.error('Error fetching projects:', error);

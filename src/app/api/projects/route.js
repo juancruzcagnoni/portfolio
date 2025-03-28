@@ -2,15 +2,19 @@ import { NextResponse } from 'next/server';
 import connectDB from '@/app/lib/mongodb';
 import Project from '@/app/models/Project';
 
+export const revalidate = 3600; // revalidar cada hora
+
 export async function GET() {
   try {
     await connectDB();
-    const projects = await Project.find({}).sort({ createdAt: -1 });
-    console.log('Projects found:', projects); // Para debugging
+    const projects = await Project.find({}).sort({ createdAt: -1 }).lean();
     return NextResponse.json(projects);
   } catch (error) {
-    console.error('Error in GET /api/projects:', error); // Para debugging
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error('MongoDB connection error:', error);
+    return NextResponse.json(
+      { error: 'Internal Server Error', details: error.message },
+      { status: 500 }
+    );
   }
 }
 
