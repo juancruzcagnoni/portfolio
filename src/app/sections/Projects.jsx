@@ -1,33 +1,81 @@
-import Link from "next/link"
+'use client';
+
+import { useEffect, useState } from 'react';
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Projects data:', data); // Para debugging
+        setProjects(data);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (error) {
+    return (
+      <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] mb-24 md:mb-32">
+        <h2 className="text-base md:text-lg font-bold text-primary dark:text-secondary mb-6">
+          Projects
+        </h2>
+        <div className="text-red-500">Error loading projects: {error}</div>
+      </section>
+    );
+  }
+
+  if (loading) {
+    return (
+      <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%]">
+        <h2 className="text-base md:text-lg font-bold text-primary dark:text-secondary mb-6">
+          Projects
+        </h2>
+        <div className="animate-pulse space-y-4">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="h-32 bg-gray-200 dark:bg-gray-800 rounded-lg" />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   return (
-    <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] mb-12">
-      <h2 className="text-lg md:text-xl font-bold text-primary dark:text-secondary mb-6">
+    <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%]">
+      <h2 className="text-base md:text-lg font-bold text-primary dark:text-secondary mb-6">
         Projects
       </h2>
       
       <div className="space-y-8">
-        <div className="space-y-2">
-          <h3 className="text-base md:text-lg font-medium text-primary dark:text-secondary">
-            Project 1
-          </h3>
-          <p className="text-sm md:text-base text-primary dark:text-secondary">
-            Project 1 description.
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          <h3 className="text-base md:text-lg font-medium text-primary dark:text-secondary">
-            Project 2
-          </h3>
-          <p className="text-sm md:text-base text-primary dark:text-secondary">
-            Project 2 description.
-          </p>
-        </div>
-
-        {/* Puedes agregar más proyectos aquí siguiendo el mismo patrón */}
+        {projects && projects.length > 0 ? (
+          projects.map((project) => (
+            <div key={project._id} className="space-y-2">
+              <h3 className="text-base md:text-lg font-medium text-primary dark:text-secondary">
+                {project.title}
+              </h3>
+              <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
+                {project.subtitle}
+              </p>
+            </div>
+          ))
+        ) : (
+          <p className="text-zinc-600 dark:text-zinc-400">No projects found.</p>
+        )}
       </div>
     </section>
-  )
+  );
 } 

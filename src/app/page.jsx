@@ -8,7 +8,7 @@ import Projects from "./sections/Projects";
 export default function Home() {
   return (
     <>
-      <div>
+      <div className="py-4 md:py-10">
         <Navbar />
         <Hero />
         <Projects />

@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/icon.png" />
       </head>
-      <body className={`${GeistSans.className} bg-secondary dark:bg-primary text-primary dark:text-secondary transition-colors duration-300`}>
+      <body className={`${GeistSans.className} bg-secondary dark:bg-primary text-primary dark:text-secondary transition-colors duration-300`} suppressHydrationWarning>
         {children}
         <Footer />
       </body>

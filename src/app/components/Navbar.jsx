@@ -36,7 +36,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] flex items-center justify-between py-4">
+    <nav className="relative top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] flex items-center justify-between">
       <div className="flex">
         <Link href="/" className="tracking-tight text-base md:text-lg font-bold text-primary dark:text-secondary transition-colors duration-300">
           Juan Cruz Cagnoni
@@ -44,12 +44,6 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center justify-between gap-2 md:gap-4">
-        <Link
-          href="/reading"
-          className="text-sm md:text-base text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
-        >
-          Reading
-        </Link>
         <Link
           href="https://twitter.com/juanccagnoni"
           className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
