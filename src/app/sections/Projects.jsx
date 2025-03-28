@@ -11,26 +11,29 @@ export default function Projects() {
     const fetchProjects = async () => {
       try {
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 segundos timeout
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
 
+        console.log('Fetching projects from API...');
         const response = await fetch('/api/projects', {
           signal: controller.signal
         });
 
         clearTimeout(timeoutId);
 
+        const data = await response.json();
+        console.log('API Response:', data);
+
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status}, details: ${JSON.stringify(data)}`);
         }
 
-        const data = await response.json();
         if (data.error) {
-          throw new Error(data.error);
+          throw new Error(`API error: ${data.error}, details: ${data.details}`);
         }
 
         setProjects(data);
       } catch (error) {
-        console.error('Error fetching projects:', error);
+        console.error('Error details:', error);
         setError(error.message);
       } finally {
         setLoading(false);
