@@ -43,7 +43,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="flex items-center justify-between gap-2 md:gap-4">
+      <div className="flex items-center justify-between gap-4 md:gap-6">
         <Link
           href="https://twitter.com/juanccagnoni"
           className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
