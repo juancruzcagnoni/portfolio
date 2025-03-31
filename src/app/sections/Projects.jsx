@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export default function Projects() {
+export default function Projects({ onLoad }) {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,16 +32,18 @@ export default function Projects() {
         }
 
         setProjects(data);
+        onLoad && onLoad();
       } catch (error) {
         console.error('Error details:', error);
         setError(error.message);
+        onLoad && onLoad();
       } finally {
         setLoading(false);
       }
     };
 
     fetchProjects();
-  }, []);
+  }, [onLoad]);
 
   if (error) {
     return (
