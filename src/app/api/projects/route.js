@@ -6,25 +6,13 @@ export const revalidate = 3600; // revalidar cada hora
 
 export async function GET() {
   try {
-    console.log('Connecting to MongoDB...');
     await connectDB();
-    console.log('Connected successfully');
-
-    console.log('Fetching projects...');
-    const projects = await Project.find({}).sort({ createdAt: -1 }).lean();
-    console.log('Projects found:', projects.length);
-
+    const projects = await Project.find({});
+    console.log('Projects found:', projects); // Para debugging
     return NextResponse.json(projects);
   } catch (error) {
-    console.error('MongoDB connection error:', error);
-    return NextResponse.json(
-      { 
-        error: 'Internal Server Error', 
-        details: error.message,
-        stack: error.stack 
-      }, 
-      { status: 500 }
-    );
+    console.error('Error fetching projects:', error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
 
