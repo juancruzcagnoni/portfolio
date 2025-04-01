@@ -10,7 +10,7 @@ export default function Tooltip({ children, content }) {
         <TooltipPrimitive.Portal>
           <TooltipPrimitive.Content
             className="bg-primary dark:bg-secondary text-secondary dark:text-primary text-xs px-2 py-1 rounded-md"
-            sideOffset={8}
+            sideOffset={7}
           >
             {content}
             <TooltipPrimitive.Arrow className="fill-primary dark:fill-secondary" />

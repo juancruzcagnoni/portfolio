@@ -14,23 +14,23 @@ export default function Home() {
     setProjectsLoaded(true);
   };
 
-  useEffect(() => {
-    if (projectsLoaded) {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-    }
-  }, [projectsLoaded]);
-
-  if (isLoading) {
-    return <Loader onLoadingComplete={() => setProjectsLoaded(true)} />;
-  }
+  const handleLoaderComplete = () => {
+    setIsLoading(false);
+  };
 
   return (
-    <div className="py-4 md:py-10">
-      <Navbar />
-      <Hero />
-      <Projects onLoad={handleProjectsLoaded} />
-    </div>
+    <>
+      {isLoading && (
+        <Loader 
+          onLoadingComplete={handleLoaderComplete}
+          isDataLoaded={projectsLoaded}
+        />
+      )}
+      <div className={`py-4 md:py-10 ${isLoading ? 'hidden' : ''}`}>
+        <Navbar />
+        <Hero />
+        <Projects onLoad={handleProjectsLoaded} />
+      </div>
+    </>
   );
 }
