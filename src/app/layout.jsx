@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Juan Cruz Cagnoni",
-  description: "Portfolio of Juan Cruz Cagnoni, a passionate developer and designer creating innovative digital solutions. Explore my projects and skills in web development and UX/UI design.",
+  description: "I&apos;m Juan Cruz Cagnoni, a passionate developer creating innovative digital solutions. Now I&apos;m working on SAP BTP and Fiori development, creating user-friendly and efficient business applications. In November 2023, I joined  DL Consultores as an SAP BTP/Fiori developer, where I work on designing and implementing modern enterprise solutions.",
   icons: {
     icon: '/J.svg',
     shortcut: '/J.svg',
