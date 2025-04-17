@@ -36,7 +36,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="relative top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] flex items-center justify-between">
+    <nav className="relative top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] flex items-center justify-between">
       <div className="flex">
         <Link href="/" className="tracking-tight text-base md:text-lg font-bold text-primary dark:text-secondary transition-colors duration-300">
           Juan Cruz Cagnoni

@@ -43,7 +43,7 @@ export default function ProjectDetail({ params }) {
 
   if (!project) {
     return (
-      <div className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] mt-8 md:mt-16">
+      <div className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] mt-8 md:mt-16">
         <p className="text-primary dark:text-secondary">Project not found.</p>
       </div>
     );
@@ -58,7 +58,7 @@ export default function ProjectDetail({ params }) {
         />
       )}
 
-      <article className={`relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] py-4 md:py-10 ${isLoading ? 'hidden' : ''}`}>
+      <article className={`relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-4 md:py-10 ${isLoading ? 'hidden' : ''}`}>
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300 mb-8"

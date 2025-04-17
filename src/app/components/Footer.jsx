@@ -8,7 +8,7 @@ import Tooltip from "./ui/Tooltip"
 export default function Footer() {
   return (
     <footer className="w-full py-4 md:py-10">
-      <div className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] flex items-center justify-between text-xs md:text-sm">
+      <div className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] flex items-center justify-between text-xs md:text-sm">
         <div className="text-primary dark:text-secondary">
           Copyright © {new Date().getFullYear()} Juan Cruz Cagnoni
         </div>

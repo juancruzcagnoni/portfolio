@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[30%] flex justify-between mt-8 md:mt-16 mb-16">
+    <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] flex justify-between mt-8 md:mt-16 mb-16">
       <div className="space-y-4 md:space-y-6">
         <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
           I&apos;m from San Antonio de Areco, Buenos Aires, Argentina. I hold a three-year technical degree in <span className="font-medium text-primary dark:text-secondary">Web Design and Programming</span> from <a href="https://davinci.edu.ar/" target="_blank" className="font-medium text-primary dark:text-secondary decoration-primary dark:decoration-secondary underline">Escuela Da Vinci</a>, where I developed a strong foundation in front-end and back-end technologies.
