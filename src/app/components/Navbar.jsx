@@ -51,7 +51,7 @@ export default function Navbar() {
           <Link href="/" className="tracking-tight text-base md:text-lg font-bold text-primary dark:text-secondary transition-colors duration-300">
             Juan Cruz Cagnoni
           </Link>
-          <span className="text-sm text-accent">SAP Fiori developer & Python enthusiast</span>
+          <span className="text-sm text-zinc-600 dark:text-zinc-400">SAP Fiori developer & Python enthusiast</span>
         </div>
       </div>
 
