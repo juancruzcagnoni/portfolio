@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react&apos';
 
 export default function Experience() {
   return (
@@ -41,7 +41,7 @@ export default function Experience() {
               </div>
               <p className="text-sm font-medium text-primary dark:text-secondary">Propulz · Contract</p>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                Development of the agency's website, using technologies such as Next.js, styled-components.
+                Development of the agency&apos;s website, using technologies such as Next.js, styled-components.
               </p>
             </div>
           </div>
