@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function Experience() {
   return (
-    <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-4 md:py-10">
+    <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-8 md:py-10">
       <h2 className="text-base md:text-lg font-bold text-primary dark:text-secondary mb-6">Experience</h2>
 
       <div className="relative">
         <div className="absolute left-0 top-0 h-full w-[1px] bg-accent"></div>
 
-        <div className="space-y-12">
-          <div className="relative pl-8">
+        <div className="space-y-8 md:space-y-12">
+          <div className="relative pl-6 md:pl-8">
             <div className="absolute w-3 h-3 bg-accent rounded-full -left-[5px]"></div>
 
             <div className="space-y-2">
@@ -29,7 +29,7 @@ export default function Experience() {
             </div>
           </div>
 
-          <div className="relative pl-8">
+          <div className="relative pl-6 md:pl-8">
             <div className="absolute w-3 h-3 bg-accent rounded-full -left-[5px]"></div>
 
             <div className="space-y-2">

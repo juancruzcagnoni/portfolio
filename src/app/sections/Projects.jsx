@@ -36,7 +36,7 @@ export default function Projects({ onLoad }) {
   }
 
   return (
-    <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-4 md:py-10">
+    <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-8 md:py-10">
       <h2 className="text-base md:text-lg font-bold text-primary dark:text-secondary mb-6">
         Projects
       </h2>
