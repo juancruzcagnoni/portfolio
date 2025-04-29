@@ -57,7 +57,7 @@ export default function Navbar() {
 
       <div className="flex items-center justify-between gap-4 md:gap-6">
         <Link
-          href="https://twitter.com/juanccagnoni"
+          href="https://github.com/juancruzcagnoni"
           className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
         >
           <GithubLogo className="h-4 w-4" />

@@ -35,7 +35,7 @@ export default function Experience() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <h3 className="text-base font-semibold text-primary dark:text-secondary">Frontend Developer</h3>
-                <span className="text-sm text-zinc-600 dark:text-zinc-400">ago. 2023 - oct. 2023</span>
+                <span className="text-sm text-zinc-600 dark:text-zinc-400">aug. 2023 - oct. 2023</span>
               </div>
               <p className="text-sm font-medium text-primary dark:text-secondary">Propulz · Contract</p>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
