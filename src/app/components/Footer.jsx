@@ -1,5 +1,4 @@
 import Link from "next/link"
-import XLogo from "./icons/XLogo"
 import GithubLogo from "./icons/GithubLogo"
 import LinkedinLogo from "./icons/LinkedinLogo"
 import EmailIcon from "./icons/EmailIcon"
@@ -14,17 +13,6 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-4 md:gap-6">
-          <Tooltip content="Follow on X">
-            <Link
-              href="https://twitter.com/juanccagnoni"
-              className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
-              target="_blank"
-              aria-label="Twitter Profile"
-            >
-              <XLogo className="h-4 w-4" />
-            </Link>
-          </Tooltip>
-
           <Tooltip content="Follow on GitHub">
             <Link
               href="https://github.com/juancruzcagnoni"
