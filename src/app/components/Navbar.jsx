@@ -51,11 +51,11 @@ export default function Navbar() {
           <Link href="/" className="tracking-tight text-base md:text-lg font-bold text-primary dark:text-secondary transition-colors duration-300">
             Juan Cruz Cagnoni
           </Link>
-          <span className="text-sm text-zinc-600 dark:text-zinc-400">SAP Fiori developer & Python enthusiast</span>
+          <span className="text-xs md:text-sm text-zinc-600 dark:text-zinc-400">SAP Fiori developer & Python enthusiast</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-4 md:gap-6">
+      <div className="flex items-center justify-between gap-6">
         <Link
           href="https://github.com/juancruzcagnoni"
           className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
