@@ -6,6 +6,7 @@ import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import Loader from "./components/Loader";
 import Experience from "./sections/Experience";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,9 +31,30 @@ export default function Home() {
       )}
       <div className={`pt-4 md:pt-10 ${isLoading ? 'hidden' : ''}`}>
         <Navbar />
-        <Hero />
-        <Experience />
-        <Projects />
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <Hero />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+        >
+          <Experience />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+        >
+          <Projects />
+        </motion.div>
       </div>
     </>
   );
