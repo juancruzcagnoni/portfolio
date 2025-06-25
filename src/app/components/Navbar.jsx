@@ -48,10 +48,10 @@ export default function Navbar() {
           className="h-10 w-10 rounded-full object-cover"
         />
         <div className="flex flex-col">
-          <Link href="/" className="tracking-tight text-base md:text-lg font-bold text-primary dark:text-secondary transition-colors duration-300">
+          <Link href="/" className="font-instrument-serif text-lg md:text-xl text-primary dark:text-secondary transition-colors duration-300">
             Juan Cruz Cagnoni
           </Link>
-          <span className="text-xs md:text-sm text-zinc-600 dark:text-zinc-400">SAP Fiori developer & Python enthusiast</span>
+          <span className="text-xs md:text-sm text-zinc-600 dark:text-zinc-400">SAP BTP & Fiori Developer</span>
         </div>
       </div>
 

@@ -52,7 +52,7 @@ export default function Loader({ onLoadingComplete, isDataLoaded }) {
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-secondary dark:bg-primary transition-all duration-500">
-      <h1 className="text-base md:text-lg font-medium text-primary dark:text-secondary mb-4 tracking-tight">
+      <h1 className="text-lg md:text-xl font-medium text-primary dark:text-secondary mb-4 tracking-tight font-instrument-serif">
         Juan Cruz Cagnoni
       </h1>
       <div className="w-48 md:w-64 h-[2px] bg-zinc-200 dark:bg-zinc-800 overflow-hidden rounded-full">
@@ -63,4 +63,4 @@ export default function Loader({ onLoadingComplete, isDataLoaded }) {
       </div>
     </div>
   );
-} 
+}

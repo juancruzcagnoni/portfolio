@@ -67,8 +67,8 @@ export default function ProjectDetail({ params }) {
           Go back
         </Link>
 
-        <div className="space-y-4 flex items-center justify-between gap-4 mb-6">
-          <h1 className="text-base md:text-lg font-bold text-primary dark:text-secondary">
+        {/* <div className="flex items-center justify-between gap-4 mb-6">
+          <h1 className="font-instrument-serif text-xl md:text-3xl text-primary dark:text-secondary">
             {project.name}
           </h1>
 
@@ -119,7 +119,7 @@ export default function ProjectDetail({ params }) {
               {project.longDescription}
             </p>
           )}
-        </div>
+        </div> */}
       </article>
     </>
   );

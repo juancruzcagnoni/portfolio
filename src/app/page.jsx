@@ -27,7 +27,7 @@ export default function Home() {
           isDataLoaded={projectsLoaded}
         />
       )}
-      <div className={`py-4 md:py-10 ${isLoading ? 'hidden' : ''}`}>
+      <div className={`pt-4 md:pt-10 ${isLoading ? 'hidden' : ''}`}>
         <Navbar />
         <Hero />
         <Experience />

@@ -3,7 +3,7 @@ import React from 'react';
 export default function Experience() {
   return (
     <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-8 md:py-10">
-      <h2 className="text-base md:text-lg font-bold text-primary dark:text-secondary mb-6">Experience</h2>
+      <h2 className="font-instrument-serif text-2xl md:text-3xl text-primary dark:text-secondary mb-6">Experience</h2>
 
       <div className="relative">
         <div className="absolute left-0 top-0 h-full w-[1px] bg-accent"></div>
@@ -22,9 +22,19 @@ export default function Experience() {
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
               </div>
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                I have developed and adjusted SAPUI5 applications both in BTP-Cloud Foundry and in BTP-NEO and FIORI on
-                premise, as well as ODATA services. Additionally, I have worked with CAP services and HANA Cloud databases,
-                performing unit testing and problem analysis to improve the quality and functionality of the applications.
+                I develop and enhance SAPUI5 applications on SAP BTP (Cloud Foundry and NEO) and FIORI on-premise, ensuring scalable, high-performance solutions. I work extensively with OData services and CAP (Cloud Application Programming) services, integrating with HANA Cloud databases.
+              </p>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                I also manage the full lifecycle of SAP applications, including:</p>
+              <ul className="text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside ml-2 md:ml-4 my-2">
+                <li>Automated deployments using CI/CD pipelines</li>
+                <li>Application transport management with SAP TMS</li>
+                <li>Integration and publication on SAP Workzone</li>
+                <li>Design and execution of unit tests to ensure code quality</li>
+                <li>Problem analysis and performance optimization</li>
+              </ul>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                I contribute to projects across various industries, delivering enterprise-grade solutions aligned with SAP best practices.
               </p>
             </div>
           </div>
@@ -45,6 +55,6 @@ export default function Experience() {
           </div>
         </div>
       </div>
-    </section> 
+    </section>
   )
 }
