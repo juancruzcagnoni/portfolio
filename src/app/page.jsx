@@ -9,11 +9,13 @@ import Experience from "./sections/Experience";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [projectsLoaded, setProjectsLoaded] = useState(false);
 
-  const handleProjectsLoaded = () => {
-    setProjectsLoaded(true);
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500); // 1.2 segundos
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleLoaderComplete = () => {
     setIsLoading(false);
@@ -24,14 +26,13 @@ export default function Home() {
       {isLoading && (
         <Loader 
           onLoadingComplete={handleLoaderComplete}
-          isDataLoaded={projectsLoaded}
         />
       )}
       <div className={`pt-4 md:pt-10 ${isLoading ? 'hidden' : ''}`}>
         <Navbar />
         <Hero />
         <Experience />
-        <Projects onLoad={handleProjectsLoaded} />
+        <Projects />
       </div>
     </>
   );

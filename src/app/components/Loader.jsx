@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export default function Loader({ onLoadingComplete, isDataLoaded }) {
+export default function Loader({ onLoadingComplete }) {
   const [progress, setProgress] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -20,33 +20,20 @@ export default function Loader({ onLoadingComplete, isDataLoaded }) {
 
   useEffect(() => {
     let timer;
-    if (isDataLoaded) {
-      timer = setInterval(() => {
-        setProgress(prev => {
-          if (prev >= 100) {
-            clearInterval(timer);
-            setTimeout(() => {
-              onLoadingComplete();
-            }, 500); 
-            return 100;
-          }
-          return prev + 4; 
-        });
-      }, 20);
-    } else {
-      timer = setInterval(() => {
-        setProgress(prev => {
-          if (prev >= 80) {
-            clearInterval(timer);
-            return 80;
-          }
-          return prev + 1;
-        });
-      }, 20);
-    }
-
+    timer = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          setTimeout(() => {
+            onLoadingComplete();
+          }, 500); 
+          return 100;
+        }
+        return prev + 4; 
+      });
+    }, 20);
     return () => clearInterval(timer);
-  }, [isDataLoaded, onLoadingComplete]);
+  }, [onLoadingComplete]);
 
   if (!mounted) return null;
 
