@@ -2,6 +2,7 @@ import { GeistSans } from 'geist/font/sans'
 import Footer from './components/Footer'
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
+import { LanguageProvider } from "./context/LanguageContext";
 
 export const metadata = {
   title: "Juan Cruz Cagnoni",
@@ -22,11 +23,13 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/J.svg" />
       </head>
       <body className={` bg-secondary dark:bg-primary text-primary dark:text-secondary transition-colors duration-300 min-h-screen flex flex-col`} suppressHydrationWarning>
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
-        <Analytics />
+        <LanguageProvider>
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <Analytics />
+        </LanguageProvider>
       </body>
     </html>
   );
