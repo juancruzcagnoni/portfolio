@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="/J.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/J.svg" />
       </head>
-      <body className={`${GeistSans.className} bg-secondary dark:bg-primary text-primary dark:text-secondary transition-colors duration-300 min-h-screen flex flex-col`} suppressHydrationWarning>
+      <body className={` bg-secondary dark:bg-primary text-primary dark:text-secondary transition-colors duration-300 min-h-screen flex flex-col`} suppressHydrationWarning>
         <main className="flex-grow">
           {children}
         </main>

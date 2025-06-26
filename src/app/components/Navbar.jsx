@@ -51,23 +51,23 @@ export default function Navbar() {
           <Link href="/" className="font-instrument-serif text-lg md:text-xl text-primary dark:text-secondary transition-colors duration-300">
             Juan Cruz Cagnoni
           </Link>
-          <span className="text-xs md:text-sm text-zinc-600 dark:text-zinc-400">SAP BTP & Fiori Developer</span>
+          <span className="text-sm text-zinc-600 dark:text-zinc-400">SAP BTP & Fiori Developer</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-6">
+      <div className="flex items-center justify-between gap-4 md:gap-6">
         <Link
           href="https://github.com/juancruzcagnoni"
           className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
         >
-          <GithubLogo className="h-4 w-4" />
+          <GithubLogo className="h-5 w-5" />
         </Link>
         <button
           onClick={toggleTheme}
           className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
           aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
         >
-          {isDarkMode ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+          {isDarkMode ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
         </button>
       </div>
     </nav>

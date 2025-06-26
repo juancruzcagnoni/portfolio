@@ -20,7 +20,7 @@ export default function Footer() {
               target="_blank"
               aria-label="GitHub Profile"
             >
-              <GithubLogo className="h-4 w-4" />
+              <GithubLogo className="h-5 w-5" />
             </Link>
           </Tooltip>
 
@@ -31,7 +31,7 @@ export default function Footer() {
               target="_blank"
               aria-label="LinkedIn Profile"
             >
-              <LinkedinLogo className="h-4 w-4" />
+              <LinkedinLogo className="h-5 w-5" />
             </Link>
           </Tooltip>
 
@@ -41,7 +41,7 @@ export default function Footer() {
               className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
               aria-label="Send Email"
             >
-              <EmailIcon className="h-4 w-4" />
+              <EmailIcon className="h-5 w-5" />
             </Link>
           </Tooltip>
         </div>

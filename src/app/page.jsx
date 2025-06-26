@@ -32,26 +32,26 @@ export default function Home() {
       <div className={`pt-4 md:pt-10 ${isLoading ? 'hidden' : ''}`}>
         <Navbar />
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, filter: 'blur(5px)' }}
+          whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <Hero />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, filter: 'blur(5px)' }}
+          whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
         >
           <Experience />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, filter: 'blur(5px)' }}
+          whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
         >
           <Projects />
         </motion.div>
