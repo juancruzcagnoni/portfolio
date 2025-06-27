@@ -74,7 +74,17 @@ export default function Experience() {
                   <h3 className="text-base font-semibold text-primary dark:text-secondary">{job.role}</h3>
                   <span className="text-sm text-zinc-600 dark:text-zinc-400">{job.date}</span>
                 </div>
-                {job.company && <p className="text-sm font-medium text-primary dark:text-secondary">{job.company}</p>}
+                {job.company && (
+                  <p className="text-sm font-medium text-primary dark:text-secondary flex items-center gap-2">
+                    {job.company}
+                    {job.company.toLowerCase().includes('full-time') && (
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      </span>
+                    )}
+                  </p>
+                )}
                 {job.desc1 && <p className="text-sm text-zinc-600 dark:text-zinc-400">{job.desc1}</p>}
                 {job.desc2 && <p className="text-sm text-zinc-600 dark:text-zinc-400">{job.desc2}</p>}
                 {job.list && (
