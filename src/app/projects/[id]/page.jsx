@@ -72,7 +72,7 @@ export default function ProjectDetail({ params }) {
           </Link>
 
           <div className="flex items-center justify-between gap-4 mb-6">
-            <h1 className="font-instrument-serif text-xl md:text-3xl text-primary dark:text-secondary">
+            <h1 className="font-instrument-serif text-2xl md:text-3xl text-primary dark:text-secondary">
               {getLocalizedText(project.name, language)}
             </h1>
 
