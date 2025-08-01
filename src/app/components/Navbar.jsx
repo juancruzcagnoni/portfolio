@@ -59,10 +59,10 @@ export default function Navbar() {
           className="h-10 w-10 rounded-full object-cover"
         />
         <div className="flex flex-col">
-          <Link href="/" className="font-instrument-serif text-lg md:text-xl text-primary dark:text-secondary transition-colors duration-300">
+          <Link href="/" className="font-instrument-serif text-xl text-primary dark:text-secondary transition-colors duration-300">
             Juan Cruz Cagnoni
           </Link>
-          <span className="text-sm text-zinc-600 dark:text-zinc-400">Fiori Developer | Mobile App Developer</span>
+          {/* <span className="text-sm text-zinc-600 dark:text-zinc-400">Fiori Developer | Mobile App Developer</span> */}
         </div>
       </div>
       <div className="flex items-center justify-between gap-4 md:gap-6">
