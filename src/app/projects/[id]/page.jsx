@@ -78,26 +78,48 @@ export default function ProjectDetail({ params }) {
 
             <div className="flex items-center gap-4">
               {project.github && (
-                <Tooltip content={t.repository}>
-                  <Link
-                    href={project.github}
-                    className="text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
-                    target="_blank"
+                <Link
+                  href={project.github}
+                  className="inline-flex items-center gap-1 text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
+                  target="_blank"
+                >
+                  Github
+                  <svg
+                    className="w-4 h-4 ml-1 opacity-70 group-hover:opacity-100 transition"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
                   >
-                    {t.repository}
-                  </Link>
-                </Tooltip>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </Link>
               )}
               {project.demo && project.demo !== '' && (
-                <Tooltip content={t.liveDemo}>
-                  <Link
-                    href={project.demo}
-                    className="text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
-                    target="_blank"
+                <Link
+                  href={project.demo}
+                  className="inline-flex items-center gap-1 text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
+                  target="_blank"
+                >
+                  Demo
+                  <svg
+                    className="w-4 h-4 ml-1 opacity-70 group-hover:opacity-100 transition"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
                   >
-                    {t.liveDemo}
-                  </Link>
-                </Tooltip>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </Link>
               )}
             </div>
           </div>

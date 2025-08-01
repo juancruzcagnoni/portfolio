@@ -46,9 +46,22 @@ export default function Lab() {
             <div key={project.id}>
               <a
                 href={`/projects/${project.id}`}
-                className="font-semibold text-base text-primary dark:text-secondary mb-1 hover:underline hover:text-accent dark:hover:text-accent transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center gap-1 font-semibold text-base text-primary dark:text-secondary mb-1 hover:underline hover:text-accent dark:hover:text-accent transition-colors duration-200 cursor-pointer"
               >
                 {getLocalizedText(project.name, language)}
+                <svg
+                  className="w-4 h-4 opacity-70 group-hover:opacity-100 transition"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
               </a>
               {project.description && (
                 <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-2">

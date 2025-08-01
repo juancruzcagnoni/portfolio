@@ -87,6 +87,28 @@ const projects = [
     demo: '',
     image: 'route-map.png'
   },
+  {
+    id: '5',
+    type: 'project',
+    createdAt: '2025-08-01',
+    name: {
+      en: 'TEAYUDA',
+      es: 'TEAYUDA',
+    },
+    description: {
+      en: 'A mobile app designed to support communication, relaxation, and professional follow-up for children and adolescents with Autism Spectrum Disorder (ASD).',
+      es: 'Aplicación móvil diseñada para facilitar la comunicación, la relajación y el seguimiento profesional de niños, niñas y adolescentes con Trastorno del Espectro Autista (TEA).',
+    },
+    longDescription: {
+      en: `TEAYUDA is a mobile application focused on enhancing the quality of life for children and adolescents with Autism Spectrum Disorder (ASD) in Argentina and Latin America. The app offers three main features: a communication board with pictograms and audio for augmentative communication, a library of relaxation and meditation audios, and a professional follow-up section where caregivers can request reports and professionals can create, store, and share progress notes. TEAYUDA was developed with an inclusive, accessible, and locally-relevant design, aiming to foster collaboration among families, therapists, and institutions. Its visual identity highlights optimism and generosity, reflected in its color palette and approachable UI.`,
+      es: `TEAYUDA es una aplicación móvil orientada a mejorar la calidad de vida de niños, niñas y adolescentes con Trastorno del Espectro Autista (TEA) en Argentina y Latinoamérica. Ofrece tres funcionalidades principales: una botonera de comunicación con pictogramas y audio para comunicación aumentativa, una biblioteca de audios de relajación y meditación, y una sección de seguimiento profesional donde los tutores pueden solicitar informes y los profesionales pueden crearlos, almacenarlos y compartir el progreso. TEAYUDA fue desarrollada con un diseño inclusivo, accesible y adaptado a la realidad local, buscando fomentar la colaboración entre familias, terapeutas e instituciones. Su identidad visual transmite optimismo y generosidad, reflejados en su paleta de colores y en una interfaz amigable.`
+    },
+    status: 'in-progress',
+    techStack: ['React Native', 'Expo', 'Supabase'],
+    github: '', // Puedes agregar el link cuando lo tengas
+    demo: '',   // Puedes agregar el link cuando lo tengas
+    image: 'teayuda.png'
+  }
 ];
 
 export default projects;
