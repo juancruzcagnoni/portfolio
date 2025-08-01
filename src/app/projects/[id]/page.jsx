@@ -115,18 +115,6 @@ export default function ProjectDetail({ params }) {
                     </span>
                   ))}
                 </div>
-                {project.status && (
-                  <span
-                    className={`inline-block px-2 py-0.5 text-xs md:text-sm font-medium rounded transition-colors duration-300
-                      ${project.status === 'completed'
-                        ? 'bg-green-100 text-green-700 dark:bg-green-200 dark:text-green-800'
-                        : project.status === 'in-progress'
-                        ? 'bg-orange-100 text-orange-700 dark:bg-orange-200 dark:text-orange-800'
-                        : 'bg-zinc-200 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-200'}`}
-                  >
-                    {project.status === 'completed' ? 'Completed' : project.status === 'in-progress' ? 'In progress' : 'Unknown'}
-                  </span>
-                )}
               </div>
             )}
             <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">

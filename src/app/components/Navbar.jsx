@@ -54,7 +54,7 @@ export default function Navbar() {
         <Image
           width={40}
           height={40}
-          src="/icon.jpg"
+          src="/icon.jpeg"
           alt="Profile"
           className="h-10 w-10 rounded-full object-cover"
         />

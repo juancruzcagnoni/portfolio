@@ -9,12 +9,12 @@ const translations = {
   en: {
     title: 'Projects',
     soon: '(coming soon)',
-    noProjects: 'No projects found.'
+    noProjects: 'Coming soon.'
   },
   es: {
     title: 'Proyectos',
     soon: '(próximamente)',
-    noProjects: 'No se encontraron proyectos.'
+    noProjects: 'Próximamente.'
   }
 };
 
