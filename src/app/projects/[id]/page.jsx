@@ -1,34 +1,35 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import Loader from '../../components/Loader';
 import Tooltip from '../../components/ui/Tooltip';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../../context/LanguageContext';
+
+import { getLocalizedText } from '../../context/localization';
+import projectsData from '../../data/projects';
+
+const translations = {
+  en: {
+    repository: 'Repository',
+    liveDemo: 'Live demo',
+  },
+  es: {
+    repository: 'Repositorio',
+    liveDemo: 'Demo',
+  },
+};
 
 export default function ProjectDetail({ params }) {
-  const [project, setProject] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const { language } = useLanguage();
+  const t = translations[language] || translations.en;
 
-  useEffect(() => {
-    const fetchProject = async () => {
-      try {
-        const response = await fetch(`/api/projects/${params.id}`);
-        const data = await response.json();
-        setProject(data);
-      } catch (error) {
-        console.error('Error fetching project:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProject();
-  }, [params.id]);
+  const project = projectsData.find((p) => p.id === params.id);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -37,10 +38,6 @@ export default function ProjectDetail({ params }) {
   const handleLoaderComplete = () => {
     setIsLoading(false);
   };
-
-  if (loading) {
-    return null;
-  }
 
   if (!project) {
     return (
@@ -76,29 +73,29 @@ export default function ProjectDetail({ params }) {
 
           <div className="flex items-center justify-between gap-4 mb-6">
             <h1 className="font-instrument-serif text-xl md:text-3xl text-primary dark:text-secondary">
-              {project.name}
+              {getLocalizedText(project.name, language)}
             </h1>
 
             <div className="flex items-center gap-4">
-              {project.repositoryUrl && (
-                <Tooltip content="View source code">
+              {project.github && (
+                <Tooltip content={t.repository}>
                   <Link
-                    href={project.repositoryUrl}
+                    href={project.github}
                     className="text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
                     target="_blank"
                   >
-                    Repository
+                    {t.repository}
                   </Link>
                 </Tooltip>
               )}
-              {project.liveDemoUrl && (
-                <Tooltip content="View live project">
+              {project.demo && project.demo !== '' && (
+                <Tooltip content={t.liveDemo}>
                   <Link
-                    href={project.liveDemoUrl}
+                    href={project.demo}
                     className="text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
                     target="_blank"
                   >
-                    Live demo
+                    {t.liveDemo}
                   </Link>
                 </Tooltip>
               )}
@@ -121,27 +118,26 @@ export default function ProjectDetail({ params }) {
                 {project.status && (
                   <span
                     className={`inline-block px-2 py-0.5 text-xs md:text-sm font-medium rounded transition-colors duration-300
-                      ${project.status === 'C'
+                      ${project.status === 'completed'
                         ? 'bg-green-100 text-green-700 dark:bg-green-200 dark:text-green-800'
-                        : project.status === 'I'
+                        : project.status === 'in-progress'
                         ? 'bg-orange-100 text-orange-700 dark:bg-orange-200 dark:text-orange-800'
-                        : 'bg-zinc-200 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-200'}
-                    `}
+                        : 'bg-zinc-200 text-zinc-700 dark:bg-zinc-700 dark:text-zinc-200'}`}
                   >
-                    {project.status === 'C' ? 'Completed' : project.status === 'I' ? 'In progress' : 'Unknown'}
+                    {project.status === 'completed' ? 'Completed' : project.status === 'in-progress' ? 'In progress' : 'Unknown'}
                   </span>
                 )}
               </div>
             )}
             <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
-              {project.description}
+              {getLocalizedText(project.description, language)}
             </p>
 
-            {project.image && (
+            {project.image && project.image !== '' && (
               <div className="relative w-full">
                 <img
-                  src={project.image}
-                  alt={project.name}
+                  src={`/${project.image}`}
+                  alt={getLocalizedText(project.name, language)}
                   className="w-full h-auto rounded-lg"
                   onLoad={handleImageLoad}
                 />
@@ -150,7 +146,7 @@ export default function ProjectDetail({ params }) {
 
             {project.longDescription && (
               <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
-                {project.longDescription}
+                {getLocalizedText(project.longDescription, language)}
               </p>
             )}
           </div>

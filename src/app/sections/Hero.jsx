@@ -12,7 +12,13 @@ const translations = {
     p2b: "DL Consultores",
     p2c: " as an ",
     p2d: "SAP BTP & Fiori developer",
-    p2e: ", where I work on designing and implementing modern enterprise solutions.",
+    p2e: (
+      <>
+        {", where I work on designing and implementing modern enterprise solutions. I'm also passionate about mobile development and have delivered several projects using "}
+        <span className="font-medium text-primary dark:text-secondary">React Native</span>
+        {"."}
+      </>
+    ),
     p3: "Beyond coding, I enjoy ",
     p3b: "playing football",
     p3c: ", a sport that has taught me teamwork, strategy, and perseverance—qualities that I bring to my professional projects as well."
@@ -27,7 +33,13 @@ const translations = {
     p2b: "DL Consultores",
     p2c: " como ",
     p2d: "desarrollador SAP BTP & Fiori",
-    p2e: ", donde participo en el diseño e implementación de soluciones empresariales modernas.",
+    p2e: (
+      <>
+        {", donde participo en el diseño e implementación de soluciones empresariales modernas. También me apasiona el desarrollo móvil y he realizado varios proyectos utilizando "}
+        <span className="font-medium text-primary dark:text-secondary">React Native</span>
+        {"."}
+      </>
+    ),
     p3: "Fuera del código, disfruto de ",
     p3b: "jugar al fútbol",
     p3c: ", un deporte que me enseñó trabajo en equipo, estrategia y perseverancia; cualidades que también aplico en mis proyectos profesionales."

@@ -7,24 +7,24 @@ import { getLocalizedText } from "../context/localization";
 
 const translations = {
   en: {
-    title: 'Projects',
+    title: 'Playground',
     soon: '(coming soon)',
-    noProjects: 'No projects found.'
+    noProjects: 'No lab projects found.'
   },
   es: {
-    title: 'Proyectos',
+    title: 'Playground',
     soon: '(próximamente)',
-    noProjects: 'No se encontraron proyectos.'
+    noProjects: 'No se encontraron proyectos de laboratorio.'
   }
 };
 
-export default function Projects() {
+export default function Lab() {
   const { language } = useLanguage();
   const t = translations[language];
   const [mounted, setMounted] = useState(false);
 
-  const mainProjects = projectsData
-    .filter((project) => project.type === "project")
+  const labProjects = projectsData
+    .filter((project) => project.type === "playground")
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
   useEffect(() => {
@@ -38,11 +38,11 @@ export default function Projects() {
       <h2 className="font-instrument-serif text-2xl md:text-3xl text-primary dark:text-secondary mb-6">
         {t.title}
       </h2>
-      {mainProjects.length === 0 ? (
+      {labProjects.length === 0 ? (
         <div className="text-zinc-500 dark:text-zinc-400">{t.noProjects}</div>
       ) : (
         <div className="grid gap-6">
-          {mainProjects.map((project) => (
+          {labProjects.map((project) => (
             <div key={project.id}>
               <a
                 href={`/projects/${project.id}`}

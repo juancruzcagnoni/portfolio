@@ -9,16 +9,7 @@ const translations = {
         role: 'SAP Fiori Developer',
         date: 'Nov. 2023 - Present',
         company: 'DL Consultores · Full-time',
-        desc1: 'I develop and enhance SAPUI5 applications on SAP BTP (Cloud Foundry and NEO) and FIORI on-premise, ensuring scalable, high-performance solutions. I work extensively with OData services and CAP (Cloud Application Programming) services, integrating with HANA Cloud databases.',
-        desc2: 'I also manage the full lifecycle of SAP applications, including:',
-        list: [
-          'Automated deployments using CI/CD pipelines',
-          'Application transport management with SAP TMS',
-          'Integration and publication on SAP Workzone',
-          'Design and execution of unit tests to ensure code quality',
-          'Problem analysis and performance optimization',
-        ],
-        desc3: 'I contribute to projects across various industries, delivering enterprise-grade solutions aligned with SAP best practices.'
+        desc1: 'I design, develop, and optimize SAPUI5 and Fiori applications on SAP BTP (Cloud Foundry, Neo) and on-premise, integrating OData and CAP services with HANA Cloud. I manage the full SAP app lifecycle, including CI/CD automation, transport management (TMS), Workzone integration, unit testing, and performance tuning. I deliver scalable, enterprise-grade solutions aligned with SAP best practices across diverse industries.',
       },
       {
         role: 'Frontend Developer',
@@ -35,16 +26,7 @@ const translations = {
         role: 'Desarrollador SAP Fiori',
         date: 'nov. 2023 - Presente',
         company: 'DL Consultores · Tiempo completo',
-        desc1: 'Desarrollo y mejoro aplicaciones SAPUI5 en SAP BTP (Cloud Foundry y NEO) y FIORI on-premise, asegurando soluciones escalables y de alto rendimiento. Trabajo ampliamente con servicios OData y CAP (Cloud Application Programming), integrando bases de datos HANA Cloud.',
-        desc2: 'También gestiono el ciclo completo de vida de aplicaciones SAP, incluyendo:',
-        list: [
-          'Despliegues automatizados usando pipelines CI/CD',
-          'Gestión de transportes de aplicaciones con SAP TMS',
-          'Integración y publicación en SAP Workzone',
-          'Diseño y ejecución de pruebas unitarias para asegurar la calidad del código',
-          'Análisis de problemas y optimización de rendimiento',
-        ],
-        desc3: 'Participo en proyectos de diversas industrias, entregando soluciones empresariales alineadas a las mejores prácticas de SAP.'
+        desc1: 'Diseño, desarrollo y optimizo aplicaciones SAPUI5 y Fiori en SAP BTP (Cloud Foundry, Neo) y en entornos locales, integrando los servicios OData y CAP con HANA Cloud. Gestiono todo el ciclo de vida de las aplicaciones SAP, incluyendo la automatización de CI/CD, la gestión del transporte (TMS), la integración con Workzone, las pruebas unitarias y el ajuste del rendimiento. Ofrezco soluciones escalables y de nivel empresarial, alineadas con las mejores prácticas de SAP en diversos sectores.',
       },
       {
         role: 'Desarrollador Frontend',
