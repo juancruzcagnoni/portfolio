@@ -107,6 +107,7 @@ const projects = [
     techStack: ['React Native', 'Expo', 'Supabase'],
     github: '', 
     demo: '',   
+    web: 'https://www.teayuda.com.ar/',
     image: 'teayuda.png'
   }
 ];
