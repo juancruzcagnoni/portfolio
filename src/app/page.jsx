@@ -41,14 +41,14 @@ export default function Home() {
           <Hero />
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, filter: 'blur(5px)' }}
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
         >
           <Projects />
-        </motion.div>
+        </motion.div> */}
         <motion.div
           initial={{ opacity: 0, filter: 'blur(5px)' }}
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
