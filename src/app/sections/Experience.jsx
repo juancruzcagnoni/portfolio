@@ -59,12 +59,15 @@ export default function Experience() {
                 {job.company && (
                   <p className="text-sm font-medium text-primary dark:text-secondary flex items-center gap-2">
                     {job.company}
-                    {job.company.toLowerCase().includes('full-time') && (
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                      </span>
-                    )}
+                    {["full-time", "tiempo completo"].some(str =>
+                      job.company.toLowerCase().includes(str)
+                    ) && (
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                      )}
+
                   </p>
                 )}
                 {job.desc1 && <p className="text-sm text-zinc-600 dark:text-zinc-400">{job.desc1}</p>}
