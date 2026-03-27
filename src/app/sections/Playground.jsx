@@ -23,15 +23,17 @@ export default function Lab() {
   const t = translations[language];
   const [mounted, setMounted] = useState(false);
 
-  const labProjects = projectsData
-    .filter((project) => project.type === "playground")
-    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  // const labProjects = projectsData
+  //   .filter((project) => project.type === "playground")
+  //   .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   if (!mounted) return null;
+
+  const labProjects = [];
 
   return (
     <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-8 md:py-10">

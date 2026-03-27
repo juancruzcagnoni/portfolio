@@ -14,8 +14,8 @@ const translations = {
         >
           DL Consultores
         </a>
-        . Passionate about mobile development and have delivered several projects using{" "}
-        <span className="font-medium text-primary dark:text-secondary">React Native</span>
+        . Building independent projects with{" "}
+        <span className="font-medium text-primary dark:text-secondary">React.js</span>
         . Technical degree in{" "}
         <span className="font-medium text-primary dark:text-secondary">Web Design and Programming</span> at{" "}
         <a
@@ -43,8 +43,8 @@ const translations = {
         >
           DL Consultores
         </a>
-        . Apasionado por el desarrollo móvil, con varios proyectos realizados usando{" "}
-        <span className="font-medium text-primary dark:text-secondary">React Native</span>
+        . Desarrollando proyectos de manera independiente con{" "}
+        <span className="font-medium text-primary dark:text-secondary">React.js</span>
         . Título técnico en{" "}
         <span className="font-medium text-primary dark:text-secondary">Diseño y Programación Web</span> en{" "}
         <a
