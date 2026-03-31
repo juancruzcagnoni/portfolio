@@ -15,7 +15,7 @@ const translations = {
           DL Consultores
         </a>
         . Building independent projects with{" "}
-        <span className="font-medium text-primary dark:text-secondary">React.js</span>
+        <span className="font-medium text-primary dark:text-secondary">React.js </span>and <span className="font-medium text-primary dark:text-secondary">React Native</span>
         . Technical degree in{" "}
         <span className="font-medium text-primary dark:text-secondary">Web Design and Programming</span> at{" "}
         <a
@@ -44,7 +44,7 @@ const translations = {
           DL Consultores
         </a>
         . Desarrollando proyectos de manera independiente con{" "}
-        <span className="font-medium text-primary dark:text-secondary">React.js</span>
+        <span className="font-medium text-primary dark:text-secondary">React.js </span>y <span className="font-medium text-primary dark:text-secondary">React Native</span>
         . Título técnico en{" "}
         <span className="font-medium text-primary dark:text-secondary">Diseño y Programación Web</span> en{" "}
         <a

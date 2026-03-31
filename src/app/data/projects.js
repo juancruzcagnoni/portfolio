@@ -2,50 +2,6 @@ const projects = [
   {
     id: '1',
     type: 'playground',
-    createdAt: '2025-04-01',
-    name: {
-      en: 'Component Renderer',
-      es: 'Component Renderer',
-    },
-    description: {
-      en: 'A tool to generate UI components like buttons, accordions, and dialogs. Provides preview and customizable options.',
-      es: 'Una herramienta para generar componentes de interfaz de usuario como botones, acordeones y diálogos. Ofrece vista previa y opciones personalizables.',
-    },
-    longDescription: {
-      en: 'Component Renderer is an innovative tool designed for developers who want to create UI components quickly and efficiently. This tool allows users to generate JavaScript-based components such as buttons, accordions, and dialogs with customizable options. The generated code can be copied and used directly in any project, saving time and effort. Users can also preview the components in real time, making it easy to see changes instantly. The tool is ideal for both beginners and experienced developers looking for a fast way to prototype UI elements.',
-      es: 'Component Renderer es una herramienta innovadora diseñada para desarrolladores que desean crear componentes de interfaz de usuario de forma rápida y eficiente. Esta herramienta permite generar componentes basados ​​en JavaScript, como botones, acordeones y cuadros de diálogo con opciones personalizables. El código generado se puede copiar y utilizar directamente en cualquier proyecto, ahorrando tiempo y esfuerzo. Además, se puede previsualizar los componentes en tiempo real, lo que facilita la visualización instantánea de los cambios. Es ideal tanto para principiantes como para desarrolladores experimentados que buscan una forma rápida de prototipar elementos de interfaz de usuario.',
-    },
-    status: 'completed',
-    techStack: ['React', 'Tailwind CSS'],
-    github: 'https://github.com/juancruzcagnoni/component-renderer',
-    demo: 'https://renderer-component.vercel.app/',
-    image: 'renderer-component.png'
-  },
-  {
-    id: '2',
-    type: 'playground',
-    createdAt: '2025-04-01',
-    name: {
-      en: 'Avatar Generator',
-      es: 'Avatar Generator',
-    },
-    description: {
-      en: "Generates an avatar based on the user's initials. Provides random colors and SVG download option.",
-      es: 'Genera un avatar basado en las iniciales del usuario. Ofrece colores aleatorios y la opción de descargar SVG.',
-    },
-    longDescription: {
-      en: "Avatar Generator is a simple yet powerful tool that creates unique avatars based on a user's name and surname initials. When a user enters their name, the generator produces a stylish logo featuring their initials, randomly selecting a color scheme for uniqueness. The avatar can be downloaded as an SVG file, making it easy to use in various applications such as social media, profile pictures, or branding. With its minimalist design and automatic color variations, this tool is perfect for users who want a quick and professional-looking avatar without the need for design skills.",
-      es: 'El Generador de Avatares es una herramienta sencilla pero potente que crea avatares únicos basados ​​en las iniciales del nombre y apellido del usuario. Al introducir su nombre, el generador genera un elegante logotipo con sus iniciales, seleccionando aleatoriamente una paleta de colores para mayor singularidad. El avatar se puede descargar como archivo SVG, lo que facilita su uso en diversas aplicaciones, como redes sociales, fotos de perfil o branding. Con su diseño minimalista y variaciones de color automáticas, esta herramienta es perfecta para quienes buscan un avatar rápido y de aspecto profesional sin necesidad de conocimientos de diseño.',
-    },
-    status: 'in-progress',
-    techStack: ['Typescript'],
-    github: 'https://github.com/juancruzcagnoni/avatar-generator',
-    demo: 'https://avatar-generator-alpha.vercel.app/',
-    image: 'avatar-generator.png'
-  },
-  {
-    id: '3',
-    type: 'playground',
     createdAt: '2025-08-01',
     name: {
       en: 'Habit Tracker',
@@ -66,7 +22,7 @@ const projects = [
     image: 'habit-tracker.png'
   },
   {
-    id: '4',
+    id: '2',
     type: 'playground',
     createdAt: '2025-08-01',
     name: {
@@ -86,29 +42,6 @@ const projects = [
     github: 'https://github.com/juancruzcagnoni/route-map',
     demo: '',
     image: 'route-map.png'
-  },
-  {
-    id: '5',
-    type: 'project',
-    createdAt: '2025-08-01',
-    name: {
-      en: 'teayuda',
-      es: 'teayuda',
-    },
-    description: {
-      en: 'A mobile app designed to support communication, relaxation, and professional follow-up for children and adolescents with Autism Spectrum Disorder (ASD).',
-      es: 'Aplicación móvil diseñada para facilitar la comunicación, la relajación y el seguimiento profesional de niños, niñas y adolescentes con Trastorno del Espectro Autista (TEA).',
-    },
-    longDescription: {
-      en: `Focused on enhancing the quality of life for children and adolescents with Autism Spectrum Disorder (ASD) in Argentina. The app offers three main features: a communication board with pictograms and audio for augmentative communication, a library of relaxation and meditation audios, and a professional follow-up section where caregivers can request reports and professionals can create, store, and share progress notes. teayuda was developed with an inclusive, accessible, and locally-relevant design, aiming to foster collaboration among families, therapists, and institutions. Its visual identity highlights optimism and generosity, reflected in its color palette and approachable UI.`,
-      es: `Orientada a mejorar la calidad de vida de niños, niñas y adolescentes con Trastorno del Espectro Autista (TEA) en Argentina. Ofrece tres funcionalidades principales: una botonera de comunicación con pictogramas y audio para comunicación aumentativa, una biblioteca de audios de relajación y meditación, y una sección de seguimiento profesional donde los tutores pueden solicitar informes y los profesionales pueden crearlos, almacenarlos y compartir el progreso. teayuda fue desarrollada con un diseño inclusivo, accesible y adaptado a la realidad local, buscando fomentar la colaboración entre familias, terapeutas e instituciones. Su identidad visual transmite optimismo y generosidad, reflejados en su paleta de colores y en una interfaz amigable.`
-    },
-    status: 'in-progress',
-    techStack: ['React Native', 'Expo', 'Supabase'],
-    github: '', 
-    demo: '',   
-    web: 'https://www.teayuda.com.ar/',
-    image: 'teayuda.png'
   }
 ];
 
