@@ -24,11 +24,11 @@ export default function Projects() {
   const t = translations[language];
   const [mounted, setMounted] = useState(false);
 
-  // const mainProjects = projectsData
-  //   .filter((project) => project.type === "project")
-  //   .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  const mainProjects = projectsData
+    .filter((project) => project.type === "project")
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-  const mainProjects = [];
+  // const mainProjects = [];
 
   useEffect(() => {
     setMounted(true);
@@ -65,9 +65,9 @@ export default function Projects() {
     flex-shrink-0 rounded-lg overflow-hidden bg-zinc-800 border border-zinc-700
     flex items-center justify-center mb-2 md:mb-0
   ">
-                {project.image ? (
+                {project.images ? (
                   <Image
-                    src={`/${project.image}`}
+                    src={`/${project.coverImage || project.images[0]}`}
                     alt={getLocalizedText(project.name, language)}
                     width={200}
                     height={120}

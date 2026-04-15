@@ -1,11 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import Loader from '../../components/Loader';
-import Tooltip from '../../components/ui/Tooltip';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -24,19 +23,38 @@ const translations = {
 };
 
 export default function ProjectDetail({ params }) {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const { language } = useLanguage();
   const t = translations[language] || translations.en;
 
   const project = projectsData.find((p) => p.id === params.id);
 
+  const images = useMemo(() => {
+    if (!project) return [];
+    if (Array.isArray(project.images)) return project.images;
+    if (project.image) return [project.image];
+    return [];
+  }, [project]);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedCount, setLoadedCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
   const handleImageLoad = () => {
-    setImageLoaded(true);
+    setLoadedCount((prev) => prev + 1);
   };
 
   const handleLoaderComplete = () => {
     setIsLoading(false);
+  };
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
   };
 
   if (!project) {
@@ -52,11 +70,14 @@ export default function ProjectDetail({ params }) {
       {isLoading && (
         <Loader
           onLoadingComplete={handleLoaderComplete}
-          isDataLoaded={imageLoaded}
+          isDataLoaded={loadedCount === images.length}
         />
       )}
 
-      <article className={`relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-4 md:py-10 ${isLoading ? 'hidden' : ''}`}>
+      <article
+        className={`relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-4 md:py-10 ${isLoading ? 'hidden' : ''
+          }`}
+      >
         <motion.div
           initial={{ opacity: 0, filter: 'blur(5px)' }}
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
@@ -65,7 +86,7 @@ export default function ProjectDetail({ params }) {
         >
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300 mb-8"
+            className="inline-flex items-center gap-2 text-primary dark:text-secondary hover:text-accent transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
             Go back
@@ -80,99 +101,77 @@ export default function ProjectDetail({ params }) {
               {project.github && (
                 <Link
                   href={project.github}
-                  className="inline-flex items-center gap-1 text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
                   target="_blank"
+                  className="text-sm underline hover:text-accent"
                 >
                   Github
-                  <svg
-                    className="w-4 h-4 ml-1 opacity-70 group-hover:opacity-100 transition"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
                 </Link>
               )}
-              {project.demo && project.demo !== '' && (
+              {project.demo && (
                 <Link
                   href={project.demo}
-                  className="inline-flex items-center gap-1 text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
                   target="_blank"
+                  className="text-sm underline hover:text-accent"
                 >
                   Demo
-                  <svg
-                    className="w-4 h-4 ml-1 opacity-70 group-hover:opacity-100 transition"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </Link>
-              )}
-              {project.web && project.web !== '' && (
-                <Link
-                  href={project.web}
-                  className="inline-flex items-center gap-1 text-sm underline text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
-                  target="_blank"
-                >
-                  Web
-                  <svg
-                    className="w-4 h-4 ml-1 opacity-70 group-hover:opacity-100 transition"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
                 </Link>
               )}
             </div>
           </div>
 
           <div className="space-y-4">
-            {project.techStack && Array.isArray(project.techStack) && project.techStack.length > 0 && (
-              <div className="flex flex-wrap items-center justify-between gap-2 mb-2 w-full">
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="inline-block bg-accent text-zinc-600 dark:text-zinc-400 dark:bg-secondary/10 dark:text-secondary rounded px-2 py-0.5 text-xs md:text-sm font-medium transition-colors duration-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+            {/* Tech stack */}
+            {project.techStack?.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-accent text-zinc-600 dark:bg-secondary/10 dark:text-secondary rounded px-2 py-0.5 text-xs md:text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             )}
+
             <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
               {getLocalizedText(project.description, language)}
             </p>
 
-            {project.image && project.image !== '' && (
+            {/* ✅ CAROUSEL */}
+            {images.length > 0 && (
               <div className="relative w-full">
-                <img
-                  src={`/${project.image}`}
-                  alt={getLocalizedText(project.name, language)}
-                  className="w-full h-auto rounded-lg"
-                  onLoad={handleImageLoad}
-                />
+                {/* Imagen */}
+                <div className="relative w-full aspect-video overflow-hidden rounded-lg bg-black">
+                  <Image
+                    src={`/${images[currentIndex]}`}
+                    alt={`${getLocalizedText(project.name, language)} - ${currentIndex + 1}`}
+                    fill
+                    className="object-contain object-center"
+                    onLoad={handleImageLoad}
+                    priority
+                  />
+                </div>
+
+                {/* Flecha izquierda */}
+                {images.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-white/10 text-white p-2 rounded-full transition"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+
+                    {/* Flecha derecha */}
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-white/10 text-white p-2 rounded-full transition"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+                  </>
+                )}
               </div>
             )}
 

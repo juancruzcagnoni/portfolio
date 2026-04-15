@@ -19,7 +19,7 @@ const projects = [
     techStack: ['React Native', 'Expo', 'Supabase'],
     github: 'https://github.com/juancruzcagnoni/habit-tracker',
     demo: '',
-    image: 'habit-tracker.png'
+    images: ['habit-tracker.png']
   },
   {
     id: '2',
@@ -41,7 +41,30 @@ const projects = [
     techStack: ['React Native', 'Expo'],
     github: 'https://github.com/juancruzcagnoni/route-map',
     demo: '',
-    image: 'route-map.png'
+    images: ['route-map.png']
+  },
+  {
+    id: '3',
+    type: 'project',
+    createdAt: '2026-04-15',
+    name: {
+      en: 'HR Management Portal',
+      es: 'HR Management Portal',
+    },
+    description: {
+      en: 'Enterprise HR management system with metrics dashboard, employee table with full CRUD functionality, and design inspired by SAP Fiori.',
+      es: 'Sistema enterprise de gestión de RRHH con dashboard de métricas, tabla de empleados con CRUD completo y diseño inspirado en SAP Fiori.',
+    },
+    longDescription: {
+      en: `HR Management Portal is an enterprise web application built with Next.js 14 and strict TypeScript. It includes a dashboard with real-time KPIs, headcount charts by department, seniority, and historical trends. The employee table supports combined filters, pagination, and CSV export. Create, edit, and delete operations implement optimistic updates with automatic rollback using TanStack Query v5, eliminating perceived UI latency. Notifications are updated in real time via Supabase Realtime (WebSockets), reflecting changes from any session without polling. The design follows the visual conventions of SAP Fiori Horizon: system font, SAP Blue #0070f2 as the primary color, fixed sidebar, and full light/dark theme support.`,
+      es: `HR Management Portal es una aplicación web enterprise construida con Next.js 14 y TypeScript estricto. Incluye un dashboard con KPIs en tiempo real, gráficos de headcount por área, seniority y tendencia histórica. La tabla de empleados soporta filtros combinados, paginación y exportación a CSV. Las operaciones de creación, edición y eliminación implementan optimistic updates con rollback automático usando TanStack Query v5, eliminando la latencia percibida en la UI. Las notificaciones se actualizan en tiempo real mediante Supabase Realtime (websockets), reflejando cambios de cualquier sesión sin polling. El diseño sigue las convenciones visuales de SAP Fiori Horizon: fuente del sistema, azul SAP #0070f2 como color primario, sidebar fija y soporte completo de tema claro/oscuro.`
+    },
+    status: 'completed',
+    techStack: ['Next.js', 'TypeScript', 'Supabase', 'TanStack Query', 'Tailwind CSS'],
+    github: 'https://github.com/juancruzcagnoni/hr-management-portal',
+    demo: 'https://hr-management-portal-mu.vercel.app/dashboard',
+    images: ['hr-1.png', 'hr-2.png'],
+    coverImage: 'hr-cover.png'
   }
 ];
 
