@@ -7,7 +7,10 @@ import Projects from "./sections/Projects";
 import Lab from "./sections/Playground";
 import Loader from "./components/Loader";
 import Experience from "./sections/Experience";
+import Footer from './components/Footer'
 import { motion } from "framer-motion";
+
+const IS_LIVE = false;
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,6 +25,14 @@ export default function Home() {
   const handleLoaderComplete = () => {
     setIsLoading(false);
   };
+
+  if (!IS_LIVE) {
+    return (
+      <div className="bg-primary flex flex-col items-center justify-center min-h-screen text-center px-4">
+        <h1 className="font-instrument-serif text-xl text-secondary">Portfolio coming soon...</h1>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -67,6 +78,7 @@ export default function Home() {
         >
           <Lab />
         </motion.div>
+        <Footer />
       </div>
     </>
   );

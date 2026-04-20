@@ -1,12 +1,11 @@
 import { GeistSans } from 'geist/font/sans'
-import Footer from './components/Footer'
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 
 export const metadata = {
   title: "Juan Cruz Cagnoni",
-  description: "I&apos;m Juan Cruz Cagnoni, a passionate developer creating innovative digital solutions. Now I&apos;m working on SAP BTP and Fiori development, creating user-friendly and efficient business applications. In November 2023, I joined  DL Consultores as an SAP BTP/Fiori developer, where I work on designing and implementing modern enterprise solutions.",
+  description: "",
   icons: {
     icon: '/J.svg',
     shortcut: '/J.svg',
@@ -27,7 +26,6 @@ export default function RootLayout({ children }) {
           <main className="flex-grow">
             {children}
           </main>
-          <Footer />
           <Analytics />
         </LanguageProvider>
       </body>
