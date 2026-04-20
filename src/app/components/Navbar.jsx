@@ -3,16 +3,15 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Sun, Moon } from "lucide-react"
+import { Sun, Moon, Monitor } from "lucide-react"
 import GithubLogo from "./icons/GithubLogo"
 import { useLanguage } from "../context/LanguageContext"
-import * as Switch from "@radix-ui/react-switch"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
-import { Globe, ChevronDown } from "lucide-react"
+import { Globe } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Navbar() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [theme, setTheme] = useState("system")
   const [mounted, setMounted] = useState(false)
   const { language, toggleLanguage } = useLanguage()
 
@@ -22,26 +21,43 @@ export default function Navbar() {
     exit: { opacity: 0, y: -5, filter: "blur(4px)", transition: { duration: 0.15, ease: "easeIn" } },
   }
 
+  const applyTheme = (value) => {
+    if (value === "dark") {
+      document.documentElement.classList.add("dark")
+    } else if (value === "light") {
+      document.documentElement.classList.remove("dark")
+    } else {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      document.documentElement.classList.toggle("dark", prefersDark)
+    }
+  }
+
   useEffect(() => {
     setMounted(true)
-    const savedTheme = localStorage.getItem("theme")
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      setIsDarkMode(true)
-      document.documentElement.classList.add("dark")
+    const saved = localStorage.getItem("theme")
+    if (saved === "light" || saved === "dark" || saved === "system") {
+      setTheme(saved)
+      applyTheme(saved)
+    } else {
+      setTheme("system")
+      applyTheme("system")
     }
   }, [])
 
-  const toggleTheme = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
-    } else {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
+  useEffect(() => {
+    if (theme !== "system") return
+    const mq = window.matchMedia("(prefers-color-scheme: dark)")
+    const handler = (e) => {
+      document.documentElement.classList.toggle("dark", e.matches)
     }
-    setIsDarkMode(!isDarkMode)
+    mq.addEventListener("change", handler)
+    return () => mq.removeEventListener("change", handler)
+  }, [theme])
+
+  const handleThemeSelect = (value) => {
+    setTheme(value)
+    localStorage.setItem("theme", value)
+    applyTheme(value)
   }
 
   if (!mounted) {
@@ -117,13 +133,44 @@ export default function Navbar() {
         >
           <GithubLogo className="h-5 w-5" />
         </Link>
-        <button
-          onClick={toggleTheme}
-          className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
-          aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {isDarkMode ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-        </button>
+        <DropdownMenu.Root>
+          <DropdownMenu.Trigger asChild>
+            <button
+              className="text-primary dark:text-secondary transition focus:outline-none"
+              aria-label="Select theme"
+            >
+              {theme === "dark" ? <Moon className="h-5 w-5" /> : theme === "light" ? <Sun className="h-5 w-5" /> : <Monitor className="h-5 w-5" />}
+            </button>
+          </DropdownMenu.Trigger>
+          <DropdownMenu.Portal>
+            <DropdownMenu.Content
+              sideOffset={8}
+              className="z-[9999] min-w-[120px] rounded-lg bg-white dark:bg-zinc-900"
+            >
+              <motion.div
+                variants={dropdownVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="z-[9999] min-w-[120px] rounded-lg bg-white dark:bg-zinc-900 py-1 px-1 backdrop-blur-sm"
+              >
+                {[
+                  { value: "light", icon: <Sun className="h-4 w-4" />, label: "Light" },
+                  { value: "dark", icon: <Moon className="h-4 w-4" />, label: "Dark" },
+                  { value: "system", icon: <Monitor className="h-4 w-4" />, label: "System" },
+                ].map(({ value, icon, label }) => (
+                  <DropdownMenu.Item
+                    key={value}
+                    onSelect={() => handleThemeSelect(value)}
+                    className={`flex items-center gap-2 px-4 py-2 cursor-pointer text-sm rounded transition-colors duration-200 ${theme === value ? "bg-accent text-primary" : "hover:bg-zinc-100 dark:hover:bg-zinc-800"}`}
+                  >
+                    {icon} {label}
+                  </DropdownMenu.Item>
+                ))}
+              </motion.div>
+            </DropdownMenu.Content>
+          </DropdownMenu.Portal>
+        </DropdownMenu.Root>
       </div>
     </nav>
   )

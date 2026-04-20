@@ -9,7 +9,12 @@ const translations = {
         role: 'SAP Fiori Developer',
         date: 'Nov. 2023 - Present',
         company: 'DL Consultores · Full-time',
-        desc1: 'SAP BTP & Fiori developer participating in corporate implementation and evolutionary maintenance projects for large-scale clients. Development of Fiori applications (freestyle and Fiori Elements) on SAPUI5 in BTP (Cloud Foundry, NEO) and on-premise, integrating OData services and CAP with HANA Cloud. End-to-end delivery from functional design to productive deployment, with CI/CD pipelines, SAP transport management (TMS), and Workzone integration.',
+        list: [
+          'Built and shipped 6+ SAP Fiori/UI5 apps for enterprise clients on SAP BTP (Cloud Foundry & NEO), end-to-end from design to production',
+          'Developed supplier and claims analyst portals with real-time OData integrations and role-based access for 200+ users',
+          'Automated release pipelines using CI/CD and SAP TMS',
+          'Built CAP (Node.js) backend services integrated with SAP ECC and HANA Cloud via OData and REST',
+        ],
       },
       {
         role: 'Frontend Developer',
@@ -26,7 +31,12 @@ const translations = {
         role: 'Desarrollador SAP Fiori',
         date: 'nov. 2023 - Presente',
         company: 'DL Consultores · Tiempo completo',
-        desc1: 'Desarrollador SAP BTP & Fiori participando en proyectos corporativos de implementación y mantenimiento evolutivo para clientes de gran escala. Desarrollo de aplicaciones Fiori (freestyle y Fiori Elements) sobre SAPUI5 en BTP (Cloud Foundry, NEO) y entornos on-premise, integrando servicios OData y CAP con HANA Cloud. Entrega end-to-end desde el diseño funcional hasta el deployment productivo, con pipelines CI/CD, gestión de transportes SAP (TMS) e integración en Workzone.',
+        list: [
+          'Construí y puse en producción 6+ apps SAP Fiori/UI5 para clientes enterprise en SAP BTP (Cloud Foundry & NEO), end-to-end desde el diseño hasta producción',
+          'Desarrollé portales de proveedores y analistas de reclamos con integraciones OData en tiempo real y acceso por roles para 200+ usuarios',
+          'Automaticé pipelines de release con CI/CD y SAP TMS',
+          'Construí servicios backend con CAP (Node.js) integrados con SAP ECC y HANA Cloud vía OData y REST',
+        ],
       },
       {
         role: 'Desarrollador Frontend',
@@ -73,7 +83,7 @@ export default function Experience() {
                 {job.desc1 && <p className="text-sm text-zinc-600 dark:text-zinc-400">{job.desc1}</p>}
                 {job.desc2 && <p className="text-sm text-zinc-600 dark:text-zinc-400">{job.desc2}</p>}
                 {job.list && (
-                  <ul className="text-sm text-zinc-600 dark:text-zinc-400 list-disc list-inside ml-2 md:ml-4 my-2">
+                  <ul className="text-sm text-zinc-600 dark:text-zinc-400 list-disc ml-2 md:ml-4 my-2">
                     {job.list.map((item, idx) => <li key={idx}>{item}</li>)}
                   </ul>
                 )}

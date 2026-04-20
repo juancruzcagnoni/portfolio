@@ -45,7 +45,7 @@ const projects = [
   },
   {
     id: '3',
-    type: 'playground',
+    type: 'project',
     createdAt: '2026-04-15',
     name: {
       en: 'HR Management Portal',

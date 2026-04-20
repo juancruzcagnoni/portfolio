@@ -5,57 +5,30 @@ const translations = {
   en: {
     main: (
       <>
-        Currently working on <span className="font-medium text-primary dark:text-secondary">SAP BTP and Fiori development</span> at{" "}
+        Frontend developer with a design background — I build interfaces that feel
+        as good as they work. Currently shipping enterprise SAP portals and modern
+        web apps from Buenos Aires.{" "}
         <a
-          href="https://dlconsultores.com.ar/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-primary dark:text-secondary underline decoration-primary dark:decoration-secondary"
+          href="mailto:juancagnoni@gmail.com"
+          className="text-primary dark:text-secondary hover:underline transition-colors duration-200"
         >
-          DL Consultores
+          Available for remote work.
         </a>
-        . Building independent projects with{" "}
-        <span className="font-medium text-primary dark:text-secondary">React.js </span>and <span className="font-medium text-primary dark:text-secondary">React Native</span>
-        . Technical degree in{" "}
-        <span className="font-medium text-primary dark:text-secondary">Web Design and Programming</span> at{" "}
-        <a
-          href="https://davinci.edu.ar/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-primary dark:text-secondary underline decoration-primary dark:decoration-secondary"
-        >
-          Escuela Da Vinci
-        </a>
-        .
       </>
     ),
   },
   es: {
     main: (
       <>
-        Actualmente trabajando en{" "}
-        <span className="font-medium text-primary dark:text-secondary">desarrollo SAP BTP y Fiori</span> en{" "}
+        Desarrollador frontend con background en diseño — construyo interfaces que
+        se sienten tan bien como funcionan. Trabajando en portales SAP enterprise
+        y apps web modernas desde Buenos Aires.{" "}
         <a
-          href="https://dlconsultores.com.ar/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-primary dark:text-secondary underline decoration-primary dark:decoration-secondary"
+          href="mailto:juancagnoni@gmail.com"
+          className="text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors duration-200"
         >
-          DL Consultores
+          Disponible para trabajo remoto.
         </a>
-        . Desarrollando proyectos de manera independiente con{" "}
-        <span className="font-medium text-primary dark:text-secondary">React.js </span>y <span className="font-medium text-primary dark:text-secondary">React Native</span>
-        . Título técnico en{" "}
-        <span className="font-medium text-primary dark:text-secondary">Diseño y Programación Web</span> en{" "}
-        <a
-          href="https://davinci.edu.ar/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-primary dark:text-secondary underline decoration-primary dark:decoration-secondary"
-        >
-          Escuela Da Vinci
-        </a>
-        .
       </>
     ),
   },
