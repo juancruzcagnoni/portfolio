@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-8 md:py-10">
       <div className="space-y-4 md:space-y-6">
-        <h1 className="tracking-tight text-primary dark:text-secondary text-4xl font-instrument-serif">Juan Cruz Cagnoni</h1>
+        <h1 className="tracking-tight text-primary dark:text-secondary text-2xl md:text-4xl font-instrument-serif">Juan Cruz Cagnoni</h1>
         <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
           {t.main}
         </p>
