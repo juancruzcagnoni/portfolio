@@ -3,6 +3,7 @@ import { GeistPixelSquare } from 'geist/font/pixel'
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
+import Footer from './components/Footer'
 
 export const metadata = {
   title: "Juan Cruz Cagnoni",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
           <main className="flex-grow">
             {children}
           </main>
+          <Footer />
           <Analytics />
         </LanguageProvider>
       </body>

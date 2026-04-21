@@ -10,6 +10,7 @@ const translations = {
         Technical degree in Web Design and Development from Escuela Da Vinci.
       </>
     ),
+    contact: "Reach me out 🡥"
   },
   es: {
     main: (
@@ -19,6 +20,7 @@ const translations = {
         Título técnico en Diseño y Programación Web en Escuela Da Vinci.
       </>
     ),
+    contact: "Contactame 🡥"
   },
 };
 
@@ -34,7 +36,7 @@ export default function Hero() {
           {t.main}
         </p>
         <button>
-          <a href="mailto:juancagnoni@gmail.com" target="_blank" className="font-instrument-serif underline">Reach me out 🡥</a>
+          <a href="mailto:juancagnoni@gmail.com" target="_blank" className="font-instrument-serif hover:underline">{t.contact}</a>
         </button>
       </div>
     </section>

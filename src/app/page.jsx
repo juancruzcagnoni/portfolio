@@ -7,10 +7,10 @@ import Lab from "./sections/Playground";
 import TechCarousel from "./sections/TechCarousel";
 import Loader from "./components/Loader";
 import Experience from "./sections/Experience";
-import Footer from './components/Footer'
+
 import { motion } from "framer-motion";
 
-const IS_LIVE = false;
+const IS_LIVE = true;
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,7 +61,7 @@ export default function Home() {
           <Experience />
         </motion.div> */}
 
-        <TechCarousel />
+        {/* <TechCarousel /> */}
 
         <motion.div
           initial={{ opacity: 0, filter: 'blur(5px)' }}
@@ -71,7 +71,6 @@ export default function Home() {
         >
           <Lab />
         </motion.div>
-        <Footer />
       </div>
     </>
   );

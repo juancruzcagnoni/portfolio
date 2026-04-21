@@ -24,7 +24,7 @@ export default function Lab() {
   const [mounted, setMounted] = useState(false);
 
   const labProjects = projectsData
-    .filter((project) => project.type === "playground")
+    .filter((project) => project.type === "project")
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
   useEffect(() => {

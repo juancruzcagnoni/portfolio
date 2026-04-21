@@ -142,14 +142,17 @@ export default function ProjectDetail({ params }) {
             {images.length > 0 && (
               <div className="relative w-full">
                 {/* Imagen */}
-                <div className="relative w-full aspect-video overflow-hidden rounded-lg bg-black">
+                <div className="w-full overflow-hidden rounded-lg bg-black">
                   <Image
                     src={`/${images[currentIndex]}`}
                     alt={`${getLocalizedText(project.name, language)} - ${currentIndex + 1}`}
-                    fill
-                    className="object-contain object-center"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-full h-auto"
                     onLoad={handleImageLoad}
                     priority
+                    unoptimized
                   />
                 </div>
 
