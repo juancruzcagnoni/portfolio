@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Sun, Moon } from "lucide-react"
-import LinkedInLogo from "./icons/LinkedInLogo"
+import LinkedinLogo from "./icons/LinkedinLogo"
 import { useLanguage } from "../context/LanguageContext"
 
 export default function Navbar() {
@@ -54,7 +54,7 @@ export default function Navbar() {
           href="https://www.linkedin.com/in/juancruzcagnoni/"
           className="text-primary dark:text-secondary hover:text-accent dark:hover:text-accent transition-colors duration-300"
         >
-          <LinkedInLogo className="h-5 w-5" />
+          <LinkedinLogo className="h-5 w-5" />
         </Link>
 
         <button
