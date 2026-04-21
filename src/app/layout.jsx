@@ -1,4 +1,5 @@
 import { GeistSans } from 'geist/font/sans'
+import { GeistPixelSquare } from 'geist/font/pixel'
 import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -15,7 +16,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={GeistPixelSquare.variable} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/J.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/J.svg" type="image/svg+xml" />

@@ -7,14 +7,14 @@ import { getLocalizedText } from "../context/localization";
 
 const translations = {
   en: {
-    title: 'Playground',
+    title: 'Projects',
     soon: '(coming soon)',
-    noProjects: 'No lab projects found.'
+    noProjects: 'No projects found.'
   },
   es: {
-    title: 'Playground',
+    title: 'Proyectos',
     soon: '(próximamente)',
-    noProjects: 'No se encontraron proyectos de laboratorio.'
+    noProjects: 'No se encontraron proyectos.'
   }
 };
 

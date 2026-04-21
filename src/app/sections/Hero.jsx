@@ -5,30 +5,18 @@ const translations = {
   en: {
     main: (
       <>
-        Frontend developer with a design background — I build interfaces that feel
-        as good as they work. Currently shipping enterprise SAP portals and modern
-        web apps from Buenos Aires.{" "}
-        <a
-          href="mailto:juancagnoni@gmail.com"
-          className="text-primary dark:text-secondary hover:underline transition-colors duration-200"
-        >
-          Available for remote work.
-        </a>
+        Currently working as SAP Fiori Developer at DL Consultores.
+        Developing independent projects with React.js.
+        Technical degree in Web Design and Development from Escuela Da Vinci.
       </>
     ),
   },
   es: {
     main: (
       <>
-        Desarrollador frontend con background en diseño — construyo interfaces que
-        se sienten tan bien como funcionan. Trabajando en portales SAP enterprise
-        y apps web modernas desde Buenos Aires.{" "}
-        <a
-          href="mailto:juancagnoni@gmail.com"
-          className="text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors duration-200"
-        >
-          Disponible para trabajo remoto.
-        </a>
+        Actualmente trabajando como SAP Fiori Developer en DL Consultores.
+        Desarrollando proyectos de manera independiente con React.js.
+        Título técnico en Diseño y Programación Web en Escuela Da Vinci.
       </>
     ),
   },
@@ -41,9 +29,13 @@ export default function Hero() {
   return (
     <section className="relative left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] py-8 md:py-10">
       <div className="space-y-4 md:space-y-6">
+        <h1 className="tracking-tight text-primary dark:text-secondary text-4xl font-instrument-serif">Juan Cruz Cagnoni</h1>
         <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-400">
           {t.main}
         </p>
+        <button>
+          <a href="mailto:juancagnoni@gmail.com" target="_blank" className="font-instrument-serif underline">Reach me out 🡥</a>
+        </button>
       </div>
     </section>
   );

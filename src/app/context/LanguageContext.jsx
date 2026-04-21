@@ -7,7 +7,7 @@ export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState(
     typeof window !== "undefined" && localStorage.getItem("lang")
       ? localStorage.getItem("lang")
-      : "es"
+      : "en"
   );
 
   const toggleLanguage = () => {

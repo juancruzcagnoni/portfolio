@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
-import Projects from "./sections/Projects";
 import Lab from "./sections/Playground";
+import TechCarousel from "./sections/TechCarousel";
 import Loader from "./components/Loader";
 import Experience from "./sections/Experience";
 import Footer from './components/Footer'
@@ -29,7 +29,7 @@ export default function Home() {
   if (!IS_LIVE) {
     return (
       <div className="bg-primary flex flex-col items-center justify-center min-h-screen text-center px-4">
-        <h1 className="font-instrument-serif text-xl text-secondary">Portfolio coming soon...</h1>
+        <h1 className="font-instrument-serif text-2xl text-secondary dot-typing" />
       </div>
     );
   }
@@ -52,23 +52,16 @@ export default function Home() {
           <Hero />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, filter: 'blur(5px)' }}
-          whileInView={{ opacity: 1, filter: 'blur(0px)' }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
-        >
-          <Projects />
-        </motion.div>
-
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, filter: 'blur(5px)' }}
           whileInView={{ opacity: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
         >
           <Experience />
-        </motion.div>
+        </motion.div> */}
+
+        <TechCarousel />
 
         <motion.div
           initial={{ opacity: 0, filter: 'blur(5px)' }}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,7 @@ body {
 }
 
 .font-instrument-serif {
-  font-family: 'Instrument Serif', serif;
+  font-family: var(--font-geist-pixel-square), monospace;
 }
 
 @keyframes blink {
@@ -31,4 +31,13 @@ body {
   100% { content: '...'; }
 }
 
+@keyframes carousel {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.3333%); }
+}
+
+.animate-carousel {
+  animation: carousel 28s linear infinite;
+  width: max-content;
+}
 

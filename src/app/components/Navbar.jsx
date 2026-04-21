@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Sun, Moon, Monitor } from "lucide-react"
+import { Sun, Moon } from "lucide-react"
 import GithubLogo from "./icons/GithubLogo"
 import { useLanguage } from "../context/LanguageContext"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
@@ -11,7 +11,7 @@ import { Globe } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Navbar() {
-  const [theme, setTheme] = useState("system")
+  const [theme, setTheme] = useState("dark")
   const [mounted, setMounted] = useState(false)
   const { language, toggleLanguage } = useLanguage()
 
@@ -24,35 +24,22 @@ export default function Navbar() {
   const applyTheme = (value) => {
     if (value === "dark") {
       document.documentElement.classList.add("dark")
-    } else if (value === "light") {
-      document.documentElement.classList.remove("dark")
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-      document.documentElement.classList.toggle("dark", prefersDark)
+      document.documentElement.classList.remove("dark")
     }
   }
 
   useEffect(() => {
     setMounted(true)
     const saved = localStorage.getItem("theme")
-    if (saved === "light" || saved === "dark" || saved === "system") {
+    if (saved === "light" || saved === "dark") {
       setTheme(saved)
       applyTheme(saved)
     } else {
-      setTheme("system")
-      applyTheme("system")
+      setTheme("dark")
+      applyTheme("dark")
     }
   }, [])
-
-  useEffect(() => {
-    if (theme !== "system") return
-    const mq = window.matchMedia("(prefers-color-scheme: dark)")
-    const handler = (e) => {
-      document.documentElement.classList.toggle("dark", e.matches)
-    }
-    mq.addEventListener("change", handler)
-    return () => mq.removeEventListener("change", handler)
-  }, [theme])
 
   const handleThemeSelect = (value) => {
     setTheme(value)
@@ -67,16 +54,16 @@ export default function Navbar() {
   return (
     <nav className="relative top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[70%] lg:w-[40%] flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <Image
+        {/* <Image
           width={40}
           height={40}
           src="/icon.jpeg"
           alt="Profile"
           className="h-10 w-10 rounded-full object-cover"
-        />
+        /> */}
         <div className="flex flex-col">
           <Link href="/" className="font-instrument-serif text-xl text-primary dark:text-secondary transition-colors duration-300">
-            Juan Cruz Cagnoni
+            /jcc<span className="animate-[blink_1s_step-end_infinite]">|</span>
           </Link>
           {/* <span className="text-sm text-zinc-600 dark:text-zinc-400">Fiori Developer | Mobile App Developer</span> */}
         </div>
@@ -139,7 +126,7 @@ export default function Navbar() {
               className="text-primary dark:text-secondary transition focus:outline-none"
               aria-label="Select theme"
             >
-              {theme === "dark" ? <Moon className="h-5 w-5" /> : theme === "light" ? <Sun className="h-5 w-5" /> : <Monitor className="h-5 w-5" />}
+              {theme === "dark" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
             </button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal>
@@ -157,7 +144,6 @@ export default function Navbar() {
                 {[
                   { value: "light", icon: <Sun className="h-4 w-4" />, label: "Light" },
                   { value: "dark", icon: <Moon className="h-4 w-4" />, label: "Dark" },
-                  { value: "system", icon: <Monitor className="h-4 w-4" />, label: "System" },
                 ].map(({ value, icon, label }) => (
                   <DropdownMenu.Item
                     key={value}
